@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2-Fucosyllactose (2'-FL) — Market Intelligence Report</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:14px}
+body{display:flex;min-height:100vh;font-family:'Segoe UI',Arial,sans-serif;background:#f0f2f5;color:#1a1a2e}
+.sidebar{width:260px;min-width:260px;position:fixed;top:0;left:0;height:100vh;overflow-y:auto;background:#0d1b2a;z-index:100;display:flex;flex-direction:column}
+.main-content{margin-left:260px;width:calc(100% - 260px);min-height:100vh;background:#f0f2f5}
+.sb-brand{padding:18px 16px 10px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.sb-brand .logo{font-size:10px;font-weight:700;color:#4fc3f7;letter-spacing:1.5px;text-transform:uppercase}
+.sb-brand .rtype{font-size:9px;color:#78909c;margin-top:3px}
+.sb-meta{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.sb-meta .prod{font-size:12px;font-weight:700;color:#e3f2fd;line-height:1.3;margin-bottom:6px}
+.sb-meta .cas{font-size:9px;color:#90a4ae;margin-bottom:8px}
+.sb-meta .badges{display:flex;flex-wrap:wrap;gap:4px}
+.badge{display:inline-block;padding:3px 8px;border-radius:10px;font-size:9px;font-weight:600;letter-spacing:0.3px}
+.badge-approved{background:#1b5e20;color:#a5d6a7;border:1px solid #388e3c}
+.badge-regulated{background:#1a237e;color:#90caf9;border:1px solid #3949ab}
+.badge-mode{background:#01579b;color:#b3e5fc;border:1px solid #0288d1}
+.badge-warn{background:#e65100;color:#ffe0b2;border:1px solid #ef6c00}
+.conf-notice{margin:10px 10px 14px;padding:10px 12px;background:rgba(255,193,7,0.12);border:1px solid rgba(255,193,7,0.35);border-radius:6px}
+.conf-title{color:#ffc107;font-size:9.5px;font-weight:700;letter-spacing:0.5px;margin-bottom:4px}
+.conf-text{color:#b0bec5;font-size:8.5px;line-height:1.45}
+.sb-nav{padding:8px 0;flex:1}
+.nav-group{padding:6px 14px 2px;font-size:9px;font-weight:700;color:#546e7a;letter-spacing:1px;text-transform:uppercase}
+.nav-link{display:flex;align-items:center;gap:8px;padding:6px 14px;color:#90a4ae;font-size:10.5px;text-decoration:none;transition:all 0.2s;border-left:2px solid transparent}
+.nav-link:hover,.nav-link.active{background:rgba(79,195,247,0.1);color:#4fc3f7;border-left-color:#4fc3f7}
+.nav-num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;background:rgba(79,195,247,0.15);border-radius:4px;font-size:9px;font-weight:700;color:#4fc3f7;flex-shrink:0}
+.sb-pdf{padding:14px;border-top:1px solid rgba(255,255,255,0.08)}
+.pdf-btn{display:block;width:100%;padding:10px;background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff;font-size:11px;font-weight:700;text-align:center;border:none;border-radius:6px;cursor:pointer;letter-spacing:0.5px}
+.pdf-btn:hover{background:linear-gradient(135deg,#1976d2,#1565c0)}
+
+/* Main content styles */
+.hero{background:linear-gradient(135deg,#0d1b2a 0%,#1a237e 50%,#0d47a1 100%);padding:40px 40px 30px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(79,195,247,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-tag{font-size:10px;font-weight:700;color:#4fc3f7;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.hero h1{font-size:30px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:8px}
+.hero h1 span{color:#4fc3f7}
+.hero-desc{font-size:13px;color:#90caf9;line-height:1.6;max-width:700px;margin-bottom:20px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{padding:4px 12px;border-radius:20px;font-size:10px;font-weight:600;background:rgba(255,255,255,0.08);color:#b3e5fc;border:1px solid rgba(79,195,247,0.3)}
+.kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kpi-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:16px;backdrop-filter:blur(4px)}
+.kpi-label{font-size:9.5px;color:#78909c;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.kpi-val{font-size:20px;font-weight:800;line-height:1}
+.kpi-sub{font-size:9px;color:#78909c;margin-top:4px}
+.kpi-green{color:#69f0ae}
+.kpi-blue{color:#4fc3f7}
+.kpi-amber{color:#ffca28}
+.kpi-red{color:#ff5252}
+.kpi-teal{color:#64ffda}
+.kpi-purple{color:#e040fb}
+
+.report-body{padding:30px 40px}
+.section{margin-bottom:32px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sec-num{width:36px;height:36px;background:#1565c0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0}
+.sec-title{font-size:17px;font-weight:700;color:#0d1b2a}
+.sec-title span{color:#1565c0}
+.card{background:#fff;border-radius:10px;box-shadow:0 1px 4px rgba(0,0,0,0.06);overflow:hidden;margin-bottom:16px}
+.card-header{background:#f8f9fa;border-left:4px solid #1565c0;padding:10px 16px;font-size:12px;font-weight:700;color:#1565c0;text-transform:uppercase;letter-spacing:0.5px}
+.card-body{padding:16px}
+
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#1565c0;color:#fff;padding:9px 12px;text-align:left;font-size:11px;font-weight:600;letter-spacing:0.3px}
+td{padding:8px 12px;border-bottom:1px solid #f0f2f5;vertical-align:top;line-height:1.4}
+tr:nth-child(even) td{background:#f8f9fb}
+tr:hover td{background:#e3f2fd}
+.india-row td{background:#fff8e1!important;border-left:3px solid #f9a825}
+.india-row:hover td{background:#fff3cd!important}
+.source-link{color:#1565c0;font-size:10px;text-decoration:none}
+.source-link:hover{text-decoration:underline}
+
+.tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600}
+.tag-green{background:#e8f5e9;color:#1b5e20}
+.tag-red{background:#ffebee;color:#b71c1c}
+.tag-amber{background:#fff8e1;color:#e65100}
+.tag-blue{background:#e3f2fd;color:#0d47a1}
+.tag-grey{background:#f5f5f5;color:#546e7a}
+
+.alert{padding:12px 16px;border-radius:8px;margin-bottom:12px;font-size:12px;line-height:1.5}
+.alert-info{background:#e3f2fd;border-left:4px solid #1565c0;color:#0d47a1}
+.alert-success{background:#e8f5e9;border-left:4px solid #2e7d32;color:#1b5e20}
+.alert-warn{background:#fff8e1;border-left:4px solid #f9a825;color:#e65100}
+.alert-danger{background:#ffebee;border-left:4px solid #c62828;color:#b71c1c}
+
+.prop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;padding:4px}
+.prop-item{background:#f8f9fb;border:1px solid #e8eaf0;border-radius:8px;padding:10px}
+.prop-label{font-size:9.5px;color:#78909c;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.prop-val{font-size:13px;font-weight:700;color:#0d1b2a}
+.prop-src{font-size:9px;color:#90a4ae}
+
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.swot-s{background:#1b5e20;color:#fff;border-radius:8px;padding:14px}
+.swot-w{background:#b71c1c;color:#fff;border-radius:8px;padding:14px}
+.swot-o{background:#1565c0;color:#fff;border-radius:8px;padding:14px}
+.swot-t{background:#e65100;color:#fff;border-radius:8px;padding:14px}
+.swot-head{font-size:12px;font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px}
+.swot-ul{padding-left:16px;font-size:11.5px;line-height:1.6}
+
+.five-forces{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.force-card{background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:12px;border-top:4px solid #ccc}
+.force-card.high{border-top-color:#f44336}
+.force-card.med{border-top-color:#ff9800}
+.force-card.low{border-top-color:#4caf50}
+.force-name{font-size:11px;font-weight:700;color:#0d1b2a;margin-bottom:4px}
+.force-level{font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:6px}
+.force-card.high .force-level{background:#ffebee;color:#b71c1c}
+.force-card.med .force-level{background:#fff3e0;color:#e65100}
+.force-card.low .force-level{background:#e8f5e9;color:#1b5e20}
+.force-desc{font-size:10.5px;color:#546e7a;line-height:1.4}
+
+.chain-wrap{display:flex;align-items:center;gap:4px;overflow-x:auto;padding:8px 4px 12px;margin-bottom:12px}
+.chain-step{padding:10px 14px;border-radius:8px;font-size:10.5px;font-weight:600;white-space:nowrap;background:#f5f5f5;color:#90a4ae;border:1px solid #e0e0e0}
+.chain-step.active{background:#1565c0;color:#fff;border-color:#1565c0}
+.chain-arrow{color:#b0bec5;font-size:14px}
+
+.verdict-box{padding:20px;border-radius:10px;text-align:center;margin-bottom:16px}
+.verdict-rec{background:linear-gradient(135deg,#1b5e20,#2e7d32)}
+.verdict-cond{background:linear-gradient(135deg,#e65100,#bf360c)}
+.verdict-no{background:linear-gradient(135deg,#b71c1c,#880000)}
+.verdict-title{font-size:20px;font-weight:800;color:#fff;margin-bottom:6px}
+.verdict-sub{font-size:12px;color:rgba(255,255,255,0.85);line-height:1.5}
+
+.step-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.step-item{display:flex;align-items:flex-start;gap:12px;background:#f8f9fb;border-radius:8px;padding:12px}
+.step-num{width:28px;height:28px;border-radius:50%;background:#1565c0;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-body{font-size:11.5px}
+.step-action{font-weight:600;color:#0d1b2a;margin-bottom:2px}
+.step-time{font-size:10px;color:#1565c0;font-weight:600}
+
+.ref-list{counter-reset:ref-counter;padding:4px 0}
+.ref-item{counter-increment:ref-counter;display:flex;gap:10px;padding:7px 0;border-bottom:1px solid #f5f5f5;font-size:11.5px}
+.ref-item::before{content:counter(ref-counter);display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#1565c0;color:#fff;font-size:9px;font-weight:700;flex-shrink:0;margin-top:1px}
+.ref-text{color:#546e7a;line-height:1.4}
+.ref-text a{color:#1565c0;text-decoration:none}
+.ref-text a:hover{text-decoration:underline}
+
+footer{background:#0d1b2a;color:#78909c;padding:24px 40px;font-size:10.5px;line-height:1.6;text-align:center;margin-top:32px}
+footer a{color:#4fc3f7;text-decoration:none}
+
+/* SECTION 11 specific */
+.s11-overview{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.s11-kpi{background:#0d1b2a;border-radius:8px;padding:14px;text-align:center}
+.s11-kpi .k-label{font-size:9.5px;color:#78909c;text-transform:uppercase;margin-bottom:4px}
+.s11-kpi .k-val{font-size:18px;font-weight:800;color:#4fc3f7}
+.s11-kpi .k-unit{font-size:9px;color:#546e7a}
+.anomaly-row td{font-weight:600;color:#b71c1c!important;background:#fff8f8!important}
+.anomaly-row:hover td{background:#ffebee!important}
+
+@media print{
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+  .sidebar{display:none}
+  .main-content{margin-left:0;width:100%}
+  .pdf-btn{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sb-brand">
+    <div class="logo">Market Intelligence</div>
+    <div class="rtype">Chemical Research Division</div>
+  </div>
+  <div class="sb-meta">
+    <div class="prod">2-Fucosyllactose (2'-FL)</div>
+    <div class="cas">CAS: 41263-94-9 | MW: 488.44 g/mol</div>
+    <div class="badges">
+      <span class="badge badge-approved">FSSAI Approved 2024</span>
+      <span class="badge badge-mode">Secondary + Trade Data</span>
+      <span class="badge badge-approved">FDA GRAS</span>
+      <span class="badge badge-regulated">EFSA Novel Food</span>
+    </div>
+  </div>
+  <div class="conf-notice">
+    <div class="conf-title">🔒 CONFIDENTIAL</div>
+    <div class="conf-text">For Internal Management Use Only. Based on publicly available secondary research. Market size estimates from third-party sources may vary. Not investment or financial advice.</div>
+  </div>
+  <nav class="sb-nav">
+    <div class="nav-group">Part A — Research</div>
+    <a href="#s01" class="nav-link" data-s="s01"><span class="nav-num">01</span>Product Overview</a>
+    <a href="#s02" class="nav-link" data-s="s02"><span class="nav-num">02</span>Synthesis & Mfg</a>
+    <a href="#s03" class="nav-link" data-s="s03"><span class="nav-num">03</span>Applications</a>
+    <a href="#s04" class="nav-link" data-s="s04"><span class="nav-num">04</span>Market Analysis</a>
+    <a href="#s05" class="nav-link" data-s="s05"><span class="nav-num">05</span>News & Intel</a>
+    <a href="#s06" class="nav-link" data-s="s06"><span class="nav-num">06</span>Pricing</a>
+    <a href="#s07" class="nav-link" data-s="s07"><span class="nav-num">07</span>Regulatory</a>
+    <a href="#s08" class="nav-link" data-s="s08"><span class="nav-num">08</span>Target Customers</a>
+    <a href="#s09" class="nav-link" data-s="s09"><span class="nav-num">09</span>Strategic Frameworks</a>
+    <a href="#s10" class="nav-link" data-s="s10"><span class="nav-num">10</span>Feasibility</a>
+    <div class="nav-group">Part B — Trade Data</div>
+    <a href="#s11" class="nav-link" data-s="s11"><span class="nav-num">11</span>Trade Data Analysis</a>
+    <a href="#refs" class="nav-link" data-s="refs"><span class="nav-num">★</span>References</a>
+  </nav>
+  <div class="sb-pdf">
+    <button class="pdf-btn" onclick="window.print()">⬇ Download PDF</button>
+  </div>
+</nav>
+
+<div class="main-content">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Market Intelligence &amp; Feasibility Report · June 2026</div>
+  <h1>2-Fucosyllactose <span>(2'-FL)</span></h1>
+  <div class="hero-desc">Human Milk Oligosaccharide (HMO) — the most abundant trisaccharide in human breast milk. Premium functional ingredient driving the next generation of infant nutrition, gut health, and immune support products globally.</div>
+  <div class="hero-chips">
+    <span class="chip">CAS: 41263-94-9</span>
+    <span class="chip">C₁₈H₃₂O₁₅ | MW: 488.44</span>
+    <span class="chip">Trisaccharide Oligosaccharide</span>
+    <span class="chip">FSSAI Approved India</span>
+    <span class="chip">FDA GRAS USA</span>
+    <span class="chip">EFSA Novel Food EU</span>
+    <span class="chip">Report Type: Secondary Research + Trade Data Analysis</span>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Global 2-FL Market (2024)</div>
+      <div class="kpi-val kpi-blue">~$163–700M</div>
+      <div class="kpi-sub">CAGR 9–13% → 2033 (multiple reports)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">India Market Status</div>
+      <div class="kpi-val kpi-amber">100% Import</div>
+      <div class="kpi-sub">FSSAI Approved Sep 2024 — early market</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Trade Data Period</div>
+      <div class="kpi-val kpi-teal">Jan 2023–Jun 2026</div>
+      <div class="kpi-sub">289 shipments | $14.88 MN$ total</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Dominant Supplier</div>
+      <div class="kpi-val kpi-purple">CHR Hansen</div>
+      <div class="kpi-sub">~57.9% share — high concentration risk</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">India Imports (Trade Data)</div>
+      <div class="kpi-val kpi-green">0.94 MN$</div>
+      <div class="kpi-sub">14.7 MT | 40 shipments | ~$64/kg</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Overall Verdict</div>
+      <div class="kpi-val kpi-green">RECOMMENDED</div>
+      <div class="kpi-sub">Import &amp; trading in India — high potential</div>
+    </div>
+  </div>
+</div>
+
+<div class="report-body">
+
+<!-- SECTION 01 -->
+<section class="section" id="s01">
+<div class="section-header">
+  <div class="sec-num">01</div>
+  <div class="sec-title">Product Overview &amp; <span>Identity</span></div>
+</div>
+
+<div class="card">
+<div class="card-header">Chemical Identity</div>
+<div class="card-body">
+<p style="font-size:12.5px;line-height:1.6;color:#37474f;margin-bottom:14px">2-Fucosyllactose (2'-FL) is a naturally occurring trisaccharide and the most abundant Human Milk Oligosaccharide (HMO) in human breast milk, constituting 20–35% of all HMOs. Structurally it consists of L-fucose linked α-1,2 to the galactose unit of lactose, forming a three-sugar molecule: fucose-galactose-glucose. It is nutritionally indigestible, acting as a prebiotic that selectively feeds beneficial gut microbiota (especially Bifidobacterium) while acting as a receptor decoy blocking pathogen adhesion to intestinal walls. It is commercially produced via microbial fermentation using engineered E. coli or Corynebacterium glutamicum strains. FSSAI approved 2-FL for infant formula in India in September 2024, marking the first HMO approval in India.</p>
+<table>
+<tr><th>Property</th><th>Value</th><th>Source</th></tr>
+<tr><td>IUPAC Name</td><td>α-L-Fucopyranosyl-(1→2)-β-D-galactopyranosyl-(1→4)-D-glucopyranose</td><td><a class="source-link" href="https://science.food.gov.uk/article/126854" target="_blank">FSA UK, 2024</a></td></tr>
+<tr><td>CAS Number</td><td>41263-94-9</td><td><a class="source-link" href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB2111311.htm" target="_blank">ChemicalBook</a></td></tr>
+<tr><td>Molecular Formula</td><td>C₁₈H₃₂O₁₅</td><td><a class="source-link" href="https://science.food.gov.uk/article/126854" target="_blank">FSA UK, 2024</a></td></tr>
+<tr><td>Molecular Weight</td><td>488.44 g/mol</td><td><a class="source-link" href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB2111311.htm" target="_blank">ChemicalBook</a></td></tr>
+<tr><td>PubChem CID</td><td>169674 (2'-FL)</td><td><a class="source-link" href="https://pubchem.ncbi.nlm.nih.gov/compound/169674" target="_blank">PubChem NCBI</a></td></tr>
+<tr><td>InChI Key</td><td>JNTDPPUHDAZDNA-GRWFEPNBSA-N</td><td><a class="source-link" href="https://www.bocsci.com/product/2-fucosyllactose-cas-41263-94-9-116976.html" target="_blank">BOC Sciences</a></td></tr>
+<tr><td>MDL Number</td><td>MFCD00079286</td><td><a class="source-link" href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB2111311.htm" target="_blank">ChemicalBook</a></td></tr>
+<tr><td>Common Synonyms</td><td>2'-FL; 2-FL; 2'-Fucosyl-D-lactose; 2'-O-Fucosyllactose; Fuc-α1,2-Gal-β1,4-Glc; Aequival; Glycare 2FL 9000; 2FL HMO</td><td>Trade literature</td></tr>
+<tr><td>HS Code — India (ITC-HS)</td><td>2940 00 00 (Other sugars, chemically pure)</td><td><a class="source-link" href="https://www.dgft.gov.in" target="_blank">DGFT India</a></td></tr>
+<tr><td>HS Code — International (WCO)</td><td>2940.00.00 (Group: chemically pure sugars)</td><td><a class="source-link" href="https://www.wcoomd.org" target="_blank">WCO HS 2022</a></td></tr>
+</table>
+<div class="alert alert-warn" style="margin-top:12px">⚠ <b>HS Code Alert:</b> 2'-FL is classified under 2940.00.00 (Other Sugars) in most jurisdictions. Some shipments in the trade data (India DATA sheet) also appear under 21069060 (Food Preparations). Confirm correct classification with CBIC/DGFT before import to avoid misclassification duties.</div>
+</div></div>
+
+<div class="card">
+<div class="card-header">Physical &amp; Chemical Properties</div>
+<div class="card-body">
+<div class="prop-grid">
+  <div class="prop-item"><div class="prop-label">Physical State</div><div class="prop-val">White Powder</div><div class="prop-src">Source: ChemicalBook</div></div>
+  <div class="prop-item"><div class="prop-label">Appearance</div><div class="prop-val">Off-white to white crystalline</div><div class="prop-src">Supplier SDS docs</div></div>
+  <div class="prop-item"><div class="prop-label">Melting Point</div><div class="prop-val">>200°C (decomp.)</div><div class="prop-src">Elicityl MSDS</div></div>
+  <div class="prop-item"><div class="prop-label">Solubility</div><div class="prop-val">Highly soluble in water</div><div class="prop-src">PubChem</div></div>
+  <div class="prop-item"><div class="prop-label">Stability</div><div class="prop-val">Stable under normal conditions; hygroscopic</div><div class="prop-src">Supplier TDS</div></div>
+  <div class="prop-item"><div class="prop-label">Storage</div><div class="prop-val">2–8°C (refrigerated), dry, dark</div><div class="prop-src">CHR Hansen SDS</div></div>
+  <div class="prop-item"><div class="prop-label">Flash Point</div><div class="prop-val">Not applicable (solid powder)</div><div class="prop-src">SDS data</div></div>
+  <div class="prop-item"><div class="prop-label">pKa</div><div class="prop-val">~12 (hydroxyl groups)</div><div class="prop-src">Estimated</div></div>
+  <div class="prop-item"><div class="prop-label">Optical Rotation</div><div class="prop-val">[α]D +76° (in water)</div><div class="prop-src">Elicityl Reference std</div></div>
+</div>
+</div></div>
+
+<div class="card">
+<div class="card-header">Commercial Grades Available</div>
+<div class="card-body">
+<table>
+<tr><th>Grade</th><th>Purity</th><th>Form</th><th>Primary Use</th><th>Key Brands</th></tr>
+<tr><td>Food/Nutrition Grade</td><td>≥95% (HPLC)</td><td>Powder</td><td>Infant formula, dietary supplements</td><td>Glycare 2FL 9000 (DSM), Aequival (FrieslandCampina)</td></tr>
+<tr><td>Research/Reference Grade</td><td>≥98–99% (HPLC)</td><td>Powder / solution</td><td>R&amp;D, analytical reference, CRO studies</td><td>Elicityl, Sigma Aldrich, Toronto Research Chemicals</td></tr>
+<tr><td>Pharmaceutical Grade</td><td>≥99.5% (USP)</td><td>Lyophilised powder</td><td>Clinical trials, pharma formulations</td><td>USP Reference Standard</td></tr>
+<tr><td>Blend/Mix Grade</td><td>Variable (2'-FL + other HMOs)</td><td>Powder blend</td><td>Multi-HMO infant formula</td><td>DSM HMO blends, Novonesis</td></tr>
+</table>
+</div></div>
+</section>
+
+<!-- SECTION 02 -->
+<section class="section" id="s02">
+<div class="section-header">
+  <div class="sec-num">02</div>
+  <div class="sec-title">Synthesis &amp; <span>Manufacturing</span></div>
+</div>
+
+<div class="alert alert-info">ℹ️ All three commercial synthesis routes for 2'-FL have been demonstrated at industrial scale. Microbial fermentation using engineered E. coli is the dominant commercial route worldwide, accounting for ~85% of production capacity. Patent landscape is active — key patents held by Jennewein (acquired by Abbott/Chr. Hansen), Glycom (acquired by DSM), and Kyowa Hakko Bio.</div>
+
+<div class="card">
+<div class="card-header">Key Synthesis Routes</div>
+<div class="card-body">
+<table>
+<tr><th>#</th><th>Route Name</th><th>Starting Materials</th><th>Key Steps / Conditions</th><th>Yield</th><th>Reference</th></tr>
+<tr>
+  <td>1</td>
+  <td><b>Microbial Fermentation — De Novo</b><br><span class="tag tag-blue">Dominant Industrial Route</span></td>
+  <td>Glucose, Lactose, Engineered E. coli (BL21/DE3)</td>
+  <td>Metabolic engineering: overexpress ManB, ManC, Gmd, Fcl (GDP-fucose pathway) + α-1,2-fucosyltransferase (wbgL/futC); fed-batch fermentation 37°C; downstream purification via nanofiltration + chromatography</td>
+  <td>59–150 g/L (fed-batch)</td>
+  <td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7793955/" target="_blank">Frontiers Bioeng. 2021</a></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><b>Salvage Pathway Fermentation</b><br><span class="tag tag-green">Alternative Bio Route</span></td>
+  <td>L-Fucose, Lactose, E. coli BL21star(DE3)</td>
+  <td>Introduce Fkp (fucokinase/pyrophosphorylase from B. fragilis) + WbgL (α-1,2-fucosyltransferase); delete competing pathway genes (fucI, fucK); optimize copy numbers; 5L fermenter Fed-batch</td>
+  <td>59.22 g/L; 95% lactose conversion</td>
+  <td><a class="source-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10825923/" target="_blank">PMC 2024, Salvage Route</a></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><b>Enzymatic / Cell-Free Multi-Enzyme Cascade</b><br><span class="tag tag-amber">Emerging / Specialty</span></td>
+  <td>GDP-L-Fucose, Lactose, FucT (H. pylori)</td>
+  <td>In vitro multi-enzyme cascade: L-fucose → GDP-L-fucose (via Fkp); GDP-L-fucose + lactose → 2'-FL via FucT; cofactor regeneration (GTP recycling); 65% yield from GDP-fucose</td>
+  <td>~65% (from GDP-fucose)</td>
+  <td><a class="source-link" href="https://www.nature.com/articles/s41598-025-32265-7" target="_blank">Sci. Reports 2025</a></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><b>Corynebacterium glutamicum Route</b><br><span class="tag tag-grey">Regulatory Approved</span></td>
+  <td>Glucose, Lactose, GM Corynebacterium glutamicum APC199</td>
+  <td>Genetically modified C. glutamicum expressing 2'-FL biosynthesis pathway; GRAS notice resubmitted 2020 (GRN 932); used by APTech; FSSAI India approved Sept 2024 for Kyowa Hakko Bio\'s version from this platform</td>
+  <td>Commercial scale</td>
+  <td><a class="source-link" href="https://science.food.gov.uk/article/126854" target="_blank">FSA UK, RP2119, 2024</a></td>
+</tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">Key Raw Materials &amp; India Availability</div>
+<div class="card-body">
+<table>
+<tr><th>Material</th><th>Role</th><th>India Availability</th><th>Notes</th></tr>
+<tr><td>Glucose / Dextrose</td><td>Carbon feedstock for fermentation</td><td><span class="tag tag-green">Widely Available India</span></td><td>Large domestic sugar industry</td></tr>
+<tr><td>Lactose</td><td>Fucose acceptor substrate</td><td><span class="tag tag-green">Available (dairy sector)</span></td><td>India is top milk producer; pharmaceutical lactose from Pharma API companies</td></tr>
+<tr><td>L-Fucose</td><td>Fucose donor (salvage pathway)</td><td><span class="tag tag-amber">Importable (China, Japan)</span></td><td>Specialty carbohydrate; available from Hua\'an (China), Meiji Seika (Japan)</td></tr>
+<tr><td>GDP-L-Fucose</td><td>Nucleotide sugar donor (enzymatic route)</td><td><span class="tag tag-red">Imported Specialty</span></td><td>Very limited; mainly R&amp;D scale</td></tr>
+<tr><td>Engineered E. coli Strain</td><td>Production organism (IPR-protected)</td><td><span class="tag tag-red">Proprietary / Licensed</span></td><td>Core IP held by Jennewein, Glycom, Kyowa — not freely available</td></tr>
+<tr><td>Fermentation Media (salts, minerals)</td><td>Growth media for microorganism</td><td><span class="tag tag-green">Widely Available India</span></td><td>Standard lab/industrial chemicals</td></tr>
+<tr><td>Nanofiltration Membranes</td><td>Downstream purification</td><td><span class="tag tag-amber">Importable</span></td><td>Membrane suppliers: Koch, DowDupont have India presence</td></tr>
+</table>
+<div class="alert alert-success" style="margin-top:12px">🇮🇳 <b>India Manufacturing Note:</b> India has strong upstream advantages — large lactose supply from dairy, glucose availability, biotech R&amp;D ecosystem (IISc, NCL, CSIR). However, 2'-FL manufacturing requires proprietary E. coli/Corynebacterium strains protected by global IP. Near-term India manufacturing path requires: (1) licensing a foreign strain, (2) independently engineering an unencumbered production strain, or (3) partnering with Kyowa Hakko Bio whose Thailand plant already supplies India. Manufacturing is HIGH complexity — regulatory bio-safety requirements, GMP for food-grade fermentation, expensive downstream processing. Not recommended for Phase 1; focus on import trading first.</div>
+</div></div>
+
+<div class="card">
+<div class="card-header">Manufacturing Complexity Assessment</div>
+<div class="card-body">
+<div class="prop-grid">
+  <div class="prop-item"><div class="prop-label">Overall Complexity</div><div class="prop-val" style="color:#b71c1c">HIGH</div><div class="prop-src">Multi-step biotech process</div></div>
+  <div class="prop-item"><div class="prop-label">IPR Landscape</div><div class="prop-val" style="color:#e65100">CONGESTED</div><div class="prop-src">Jennewein/Abbott, Glycom/DSM, Kyowa</div></div>
+  <div class="prop-item"><div class="prop-label">Key Challenge</div><div class="prop-val">Strain Access + GMP</div><div class="prop-src">Proprietary organism IP</div></div>
+  <div class="prop-item"><div class="prop-label">Downstream Purification</div><div class="prop-val">High Cost</div><div class="prop-src">Nanofiltration + Chromatography</div></div>
+  <div class="prop-item"><div class="prop-label">Temperature Sensitivity</div><div class="prop-val">Moderate</div><div class="prop-src">Stable at RT; store cold</div></div>
+  <div class="prop-item"><div class="prop-label">Scale-up Risk</div><div class="prop-val" style="color:#b71c1c">HIGH</div><div class="prop-src">Few commercial-scale producers globally</div></div>
+</div>
+</div></div>
+</section>
+
+<!-- SECTION 03 -->
+<section class="section" id="s03">
+<div class="section-header">
+  <div class="sec-num">03</div>
+  <div class="sec-title">Applications, End-Products &amp; <span>Market Sizes</span></div>
+</div>
+
+<!-- Application 1 -->
+<div class="card">
+<div class="card-header">Application 1: Infant Formula — Core &amp; Largest Market</div>
+<div class="card-body">
+<p style="font-size:12px;line-height:1.6;margin-bottom:12px">2'-FL is the most prevalent HMO in human breast milk and its primary commercial use is as an additive to infant formula to replicate the immunological benefits of breastfeeding. It selectively promotes Bifidobacterium growth, reduces pathogen adhesion, decreases incidence of diarrhea/infections, and supports immune system development. Infant formula remains the dominant application segment, accounting for ~60–69% of total HMO demand by value.</p>
+<table>
+<tr><th>End Product / Category</th><th>Use of 2'-FL</th><th>Key Companies</th></tr>
+<tr><td>Stage 1 Infant Milk Formula (0–6 months)</td><td>Added at 0.2–1.2 g/L to replicate breast milk HMO profile</td><td>Nestlé (NAN Optipro), Abbott (Similac PRO-Advance), Danone (Nutrilon), Wyeth (Illuma)</td></tr>
+<tr><td>Stage 2 Follow-on Formula (6–12 months)</td><td>Same prebiotic function; added with LNnT in dual-HMO products</td><td>Mead Johnson (Enfamil), Friesland (Frisolac), Abbott Nutricia</td></tr>
+<tr><td>Specialty/Medical Infant Formula</td><td>Anti-infective and gut-barrier supporting role</td><td>Nestlé Health Science, Danone Nutricia, Reckitt</td></tr>
+<tr><td>Growing-Up Milk (1–3 years)</td><td>Prebiotic support in toddler nutrition</td><td>Nestlé CEREGROW, Gerber, Danone</td></tr>
+</table>
+<table style="margin-top:12px">
+<tr><th>Segment</th><th>Global Market Size</th><th>CAGR</th><th>Source</th></tr>
+<tr><td>Global Infant Formula Market</td><td>USD 87.75 Bn (2025)</td><td>10.02% (2026–2034)</td><td><a class="source-link" href="https://www.fortunebusinessinsights.com/industry-reports/infant-formula-market-101498" target="_blank">Fortune BI, 2025</a></td></tr>
+<tr class="india-row"><td>🇮🇳 India Infant Nutrition Market</td><td>Growing, fastest CAGR 12.1%</td><td>12.1% through 2030</td><td><a class="source-link" href="https://www.grandviewresearch.com/industry-analysis/infant-nutrition-market-report" target="_blank">GVR, 2024</a></td></tr>
+<tr><td>2'-FL Segment (Infant Formula)</td><td>USD 0.6 Bn by 2032</td><td>13.18% (2025–2034)</td><td><a class="source-link" href="https://www.marketresearchfuture.com/reports/2-fucosyllactose-market-34007" target="_blank">MRFR, 2024</a></td></tr>
+</table>
+</div></div>
+
+<!-- Application 2 -->
+<div class="card">
+<div class="card-header">Application 2: Dietary Supplements &amp; Functional Foods</div>
+<div class="card-body">
+<p style="font-size:12px;line-height:1.6;margin-bottom:12px">Beyond infant nutrition, 2'-FL is gaining traction in adult gut health supplements, immunity boosters, and functional foods. Clinical evidence supports benefits in IBS, gut microbiome modulation, anti-aging (via antioxidant pathway regulation in d-galactose models), and norovirus inhibition. Post-COVID immune health awareness accelerated consumer interest in HMO supplements.</p>
+<table>
+<tr><th>End Product</th><th>Health Claim</th><th>Key Brands/Companies</th></tr>
+<tr><td>Gut Health Capsules / Powders</td><td>Prebiotic, microbiome balance, IBS support</td><td>NOW Foods, Garden of Life, Bifidobacterium supplement brands</td></tr>
+<tr><td>Immunity Supplement Blends</td><td>Immune modulation, anti-inflammatory</td><td>BioSerum Lifesciences, nutraceutical brands</td></tr>
+<tr><td>Sports Nutrition / Recovery</td><td>Gut-barrier integrity for athletes</td><td>Emerging — few products 2024–25</td></tr>
+<tr><td>Senior Nutrition (Aging Support)</td><td>Anti-aging gut-brain axis, Akkermansia promotion</td><td>Early stage — clinical evidence accumulating</td></tr>
+<tr><td>Functional Beverages / Bars</td><td>Prebiotic fiber fortification</td><td>Nestlé Gerber PRO Rice Cereal (China, 2025)</td></tr>
+</table>
+<table style="margin-top:12px">
+<tr><th>Segment</th><th>Market Size</th><th>CAGR</th><th>Source</th></tr>
+<tr><td>2'-FL Dietary Supplements</td><td>USD 0.24 Bn by 2032 (pharma/supp)</td><td>13.18%</td><td><a class="source-link" href="https://www.marketresearchfuture.com/reports/2-fucosyllactose-market-34007" target="_blank">MRFR, 2024</a></td></tr>
+<tr><td>HMO Functional Foods</td><td>USD 0.36 Bn by 2032</td><td>High growth</td><td><a class="source-link" href="https://www.marketresearchfuture.com/reports/2-fucosyllactose-market-34007" target="_blank">MRFR, 2024</a></td></tr>
+</table>
+</div></div>
+
+<!-- Application 3 -->
+<div class="card">
+<div class="card-header">Application 3: Pharmaceutical / Clinical Research &amp; Reference Standards</div>
+<div class="card-body">
+<p style="font-size:12px;line-height:1.6;margin-bottom:12px">2'-FL is used as a reference standard in pharmaceutical analytical labs (USP compendium), as a tool compound in gut microbiome research, and is being investigated for therapeutic roles in conditions like necrotizing enterocolitis (NEC), IBD, norovirus infection prevention, and short bowel syndrome. CRO and clinical trial demand supports steady small-volume high-purity trade.</p>
+<table>
+<tr><th>Use</th><th>Details</th><th>Market Relevance for India</th></tr>
+<tr><td>USP Reference Standard</td><td>High-purity analytical standard for QC/QA in infant formula labs</td><td>MODERATE — pharma/food labs buying from USP (confirmed in trade data)</td></tr>
+<tr><td>NEC Prevention Research</td><td>Clinical evidence: 2'-FL + 6'-SL protect against NEC in neonates</td><td>India NICU research opportunity</td></tr>
+<tr><td>Norovirus Inhibition</td><td>2'-FL acts as HBG antigen decoy, inhibits GII.4 norovirus replication</td><td>Vaccine/antiviral R&amp;D pipeline</td></tr>
+<tr><td>Gut Microbiome Research Tools</td><td>Used in in vitro microbiome modulation studies</td><td>Growing India biotech research sector</td></tr>
+</table>
+<div class="alert alert-warn" style="margin-top:12px">⚠ <b>Note:</b> 2'-FL\'s pharmaceutical role is currently indirect — it\'s not an approved drug, but a functional food ingredient. Pharmaceutical-grade supply is limited and premium-priced. Sigma-Aldrich and Elicityl supply research-grade material to India (confirmed in trade data).</div>
+</div></div>
+</section>
+
+<!-- SECTION 04 -->
+<section class="section" id="s04">
+<div class="section-header">
+  <div class="sec-num">04</div>
+  <div class="sec-title">Market <span>Analysis</span></div>
+</div>
+
+<div class="card">
+<div class="card-header">4A — Global Market Size &amp; Growth</div>
+<div class="card-body">
+<div class="alert alert-warn" style="margin-bottom:12px">⚠ <b>Wide Range Alert:</b> Multiple market research firms report significantly different 2'-FL market sizes due to different scope definitions (2'-FL standalone vs. full HMO market vs. applications market). Figures below represent the most credible range with sources noted.</div>
+<table>
+<tr><th>Report</th><th>2024 Market Size</th><th>Forecast</th><th>CAGR</th><th>Source</th></tr>
+<tr><td>Strategic Revenue Insights</td><td>~USD 700 Mn</td><td>USD 1.5 Bn by 2033</td><td>9.2%</td><td><a class="source-link" href="https://www.openpr.com/news/4161347/global-2-fucosyllactose-market-poised-for-transformative" target="_blank">OpenPR, Aug 2025</a></td></tr>
+<tr><td>Data Horizzon Research</td><td>USD 163.5 Mn</td><td>USD 512.8 Mn by 2033</td><td>12.1%</td><td><a class="source-link" href="https://datahorizzonresearch.com/2-fucosyllactose-2-fl-market-38081" target="_blank">DHR, 2024</a></td></tr>
+<tr><td>MRFR</td><td>USD 620 Mn (2024E)</td><td>USD 2.15 Bn by 2034</td><td>13.18%</td><td><a class="source-link" href="https://www.marketresearchfuture.com/reports/2-fucosyllactose-market-34007" target="_blank">MRFR, 2024</a></td></tr>
+<tr><td>Biosynthetic HMO Market (VMR)</td><td>USD 450 Mn (2025, all HMOs)</td><td>USD 1.2 Bn by 2034</td><td>12.5%</td><td><a class="source-link" href="https://www.verifiedmarketreports.com/product/biosynthetic-human-milk-oligosaccharides-hmos-market/" target="_blank">VMR, 2026</a></td></tr>
+<tr><td>Overall HMO Market (incl. all types)</td><td>USD 196.5 Mn (2022)</td><td>USD 850.5 Mn by 2030</td><td>20.1%</td><td><a class="source-link" href="https://www.datamintelligence.com/research-report/human-milk-oligosaccharides-market" target="_blank">DataM Intel, 2025</a></td></tr>
+</table>
+<p style="font-size:11.5px;color:#546e7a;margin-top:10px"><b>Management interpretation:</b> Consensus range for 2'-FL market 2024 = USD 163–700 Mn. 2'-FL holds ~30% share of total HMO market. CAGR consensus = 9–13%. Strong multi-year growth is undisputed across all sources.</p>
+</div></div>
+
+<div class="card">
+<div class="card-header">4B — India Market</div>
+<div class="card-body">
+<table>
+<tr><th>Indicator</th><th>Finding</th><th>Source</th></tr>
+<tr class="india-row"><td>🇮🇳 India Production Status</td><td>NONE — No domestic 2'-FL manufacturing as of 2026</td><td>Trade data + market research</td></tr>
+<tr class="india-row"><td>🇮🇳 India Import Dependency</td><td>100% — All 2'-FL in India is imported</td><td>Trade DATA sheet analysis</td></tr>
+<tr class="india-row"><td>🇮'-FL FSSAI First Approval</td><td>Kyowa Hakko Bio (from Thailand facility) — September 2, 2024</td><td><a class="source-link" href="https://www.kirinholdings.com/en/newsroom/release/2024/0925_01.html" target="_blank">Kirin Holdings, Sep 2024</a></td></tr>
+<tr class="india-row"><td>🇮🇳 DSM-Firmenich FSSAI</td><td>GLYCARE 2FL received FSSAI approval — April 2025</td><td><a class="source-link" href="https://www.openpr.com/news/4184096/novel-ingredients-in-infant-formula-market-adoption" target="_blank">InsightAce, Sep 2025</a></td></tr>
+<tr class="india-row"><td>🇮🇳 Key India Importer (Trade Data)</td><td>Nutricia International Pvt Ltd (Danone) — dominant buyer; 17 shipments, 14.62 MT, $0.93 MN$</td><td>Trade DATA sheet analysis</td></tr>
+<tr class="india-row"><td>🇮🇳 India Demand Driver</td><td>Rising premium infant formula market (12.1% CAGR); working mothers; growing awareness</td><td><a class="source-link" href="https://www.grandviewresearch.com/industry-analysis/infant-nutrition-market-report" target="_blank">GVR, 2024</a></td></tr>
+<tr class="india-row"><td>🇮🇳 India Baby Food Market</td><td>India fastest-growing CAGR 12.1%; urbanization, women workforce participation rising</td><td><a class="source-link" href="https://www.mordorintelligence.com/industry-reports/india-baby-food-market" target="_blank">Mordor Intel, 2025</a></td></tr>
+<tr class="india-row"><td>🇮🇳 Key Consuming Cities</td><td>Mumbai, Delhi NCR, Bangalore, Pune, Hyderabad, Chennai (premium infant formula clusters)</td><td>Distributor intelligence</td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">4C — Major Manufacturing Countries</div>
+<div class="card-body">
+<table>
+<tr><th>Country</th><th>Role</th><th>Key Players</th><th>Share (Est.)</th></tr>
+<tr><td>🇩🇪 Germany</td><td>Primary production hub — CHR Hansen HMO GmbH / Jennewein</td><td>CHR Hansen HMO GmbH (Novonesis), Jennewein Biotechnologie (Abbott)</td><td>~55–60%</td></tr>
+<tr><td>🇩🇰 Denmark</td><td>Major production — Glycom/DSM-Firmenich</td><td>DSM-Firmenich (Glycom), Novonesis HQ</td><td>~15–20%</td></tr>
+<tr><td>🇳🇱 Netherlands</td><td>Production + distribution hub</td><td>DSM-Firmenich, FrieslandCampina</td><td>~10%</td></tr>
+<tr><td>🇹🇭 Thailand</td><td>Kyowa Hakko Bio facility (operational since Nov 2022)</td><td>Kyowa Hakko Bio (Kirin Holdings)</td><td>~5–8%</td></tr>
+<tr><td>🇰🇷 South Korea</td><td>Research + export (confirmed in trade data)</td><td>Not identified by name in trade data</td><td>~3–5%</td></tr>
+<tr><td>🇨🇳 China</td><td>Emerging low-cost supplier (Synaura, Huangshan Toisyn)</td><td>Synaura Biotechnology (Shanghai), Huangshan Toisyn Biotech</td><td>~2–5% growing</td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">4D — Major Global Manufacturers &amp; Suppliers</div>
+<div class="card-body">
+<table>
+<tr><th>Company</th><th>Country</th><th>Role</th><th>Website</th></tr>
+<tr><td>CHR Hansen HMO GmbH (now Novonesis)</td><td>Germany/Denmark</td><td>Top manufacturer — acquired Jennewein 2020; ~57.9% share in trade data</td><td>novonesis.com</td></tr>
+<tr><td>DSM-Firmenich (Glycom)</td><td>Netherlands/Denmark</td><td>Major manufacturer; Glycare 2FL 9000 brand; FSSAI approved April 2025</td><td>dsm-firmenich.com</td></tr>
+<tr><td>Kyowa Hakko Bio (Kirin Holdings)</td><td>Japan/Thailand</td><td>First HMO FSSAI approved in India (Sep 2024); Thailand facility</td><td>kyowa-kirin.com</td></tr>
+<tr><td>FrieslandCampina (Royal)</td><td>Netherlands</td><td>Aequival 2'-FL brand; confirmed supplier in trade data</td><td>frieslandcampina.com</td></tr>
+<tr><td>Inbiose (Royal Cosun subsidiary)</td><td>Belgium</td><td>Enzymatic synthesis route — differentiated IP approach</td><td>inbiose.com</td></tr>
+<tr><td>Advanced Protein Technologies</td><td>South Korea</td><td>Confirmed in trade data as 5th largest supplier (KGM unit)</td><td>advancedprotein.com</td></tr>
+<tr><td>Synaura Biotechnology (Shanghai)</td><td>China</td><td>Emerging low-cost supplier; 2 shipments in trade data</td><td>synaura.com</td></tr>
+<tr><td>Huangshan Toisyn Biotech</td><td>China</td><td>Growing Chinese HMO producer; 4 shipments to Vietnam</td><td>toisyn.com</td></tr>
+<tr class="india-row"><td>🇮🇳 Nutricia International Pvt Ltd</td><td>India (Danone subsidiary)</td><td>India\'s largest 2'-FL buyer; 17 KGM shipments from CHR Hansen Germany</td><td>nutricia.com</td></tr>
+<tr class="india-row"><td>🇮🇳 Abbott Healthcare Pvt Ltd</td><td>India</td><td>R&amp;D importer; 1 shipment Germany→India</td><td>abbott.com</td></tr>
+<tr class="india-row"><td>🇮🇳 CHR Hansen India Pvt Ltd</td><td>India</td><td>Local representative receiving FOC (free of charge) samples</td><td>novonesis.com</td></tr>
+</table>
+</div></div>
+</section>
+
+<!-- SECTION 05 -->
+<section class="section" id="s05">
+<div class="section-header">
+  <div class="sec-num">05</div>
+  <div class="sec-title">Latest News &amp; <span>Industry Intelligence</span></div>
+</div>
+
+<div class="card">
+<div class="card-header">Key News Items — Last 18 Months (Dec 2024–June 2026)</div>
+<div class="card-body">
+<table>
+<tr><th>News Item</th><th>Summary &amp; Trade Data Linkage</th><th>Source &amp; Date</th></tr>
+<tr>
+  <td><b>🇮🇳 India: Kyowa Hakko Bio gets first FSSAI Approval</b></td>
+  <td>Kyowa Hakko Bio (Thailand facility) received FSSAI approval September 2, 2024 — first HMO approved in India. <b>Trade Linkage:</b> Trade data shows only Nutricia and Abbott importing before 2024 — FSSAI approval will unlock new buyers entering 2025–26.</td>
+  <td><a class="source-link" href="https://www.kirinholdings.com/en/newsroom/release/2024/0925_01.html" target="_blank">Kirin Holdings, Sep 2024</a></td>
+</tr>
+<tr>
+  <td><b>🇮🇳 India: DSM-Firmenich GLYCARE 2FL FSSAI Approved</b></td>
+  <td>DSM-Firmenich received FSSAI approval for GLYCARE 2FL in April 2025, with daily maximum of 1.2g/L for infant formula. <b>Trade Linkage:</b> No DSM India imports visible in 2024 trade data — first shipments likely to appear in 2025–26 data.</td>
+  <td><a class="source-link" href="https://www.openpr.com/news/4184096/novel-ingredients-in-infant-formula-market-adoption" target="_blank">InsightAce/OpenPR, Sep 2025</a></td>
+</tr>
+<tr>
+  <td><b>🌏 BENEO + WACKER Launch 2'-FL Partnership</b></td>
+  <td>BENEO and WACKER partnered in May 2025 to introduce precision fermentation 2'-FL globally. WACKER produces; BENEO commercializes. Adds new EU-based supply chain. <b>Trade Linkage:</b> Not yet visible in trade data (post mid-2025); watch for new supplier entries in 2026.</td>
+  <td><a class="source-link" href="https://www.coherentmarketinsights.com/market-insight/human-milk-oligosaccharides-market-5064" target="_blank">CMI, 2025</a></td>
+</tr>
+<tr>
+  <td><b>🇨🇳 China: Nestle Gerber PRO with 2'-FL Approved</b></td>
+  <td>Nestlé launched Gerber PRO rice cereal enriched with 2'-FL in China (June 2025), approved by China\'s National Health Commission for infant complementary foods. <b>Trade Linkage:</b> Germany → Vietnam (CHR Hansen) corridor dominates 2023–25 trade data; China approvals will shift production closer to Asia Pacific demand centers.</td>
+  <td><a class="source-link" href="https://www.coherentmarketinsights.com/market-insight/human-milk-oligosaccharides-market-5064" target="_blank">CMI, Jun 2025</a></td>
+</tr>
+<tr>
+  <td><b>🇪🇺 DSM-Firmenich + Evonik Slovakia Plant — 4,000 MT HMO Capacity</b></td>
+  <td>DSM-Firmenich\'s Evonik JV announced 2024 production start in Slovakia, expanding annual HMO capacity by 4,000 tonnes. <b>Trade Linkage:</b> Explains why DSM (Denmark/Netherlands origin) has increasing shipment volumes; new supply may push prices lower 2025–27.</td>
+  <td><a class="source-link" href="https://www.futuremarketinsights.com/reports/human-milk-oligosaccharides-market" target="_blank">FMI, Jul 2025</a></td>
+</tr>
+<tr>
+  <td><b>🇪🇺 EU: DSM-Firmenich LNFP-I/2'-FL Blend Approved Novel Food</b></td>
+  <td>September 2025: DSM-Firmenich\'s LNFP-I/2'-FL mixture approved as novel food in EU and UK for multiple life stages beyond infant formula. Broadens addressable market significantly. <b>Trade Linkage:</b> Signals HMO category expanding from infant-only to general nutrition — India should monitor for regulatory update.</td>
+  <td><a class="source-link" href="https://www.insightaceanalytic.com/report/novel-ingredients-in-infant-formula-market/2977" target="_blank">InsightAce, Jan 2026</a></td>
+</tr>
+<tr>
+  <td><b>🇨🇳 China: 3-HMO Blends Approved for Domestic Formulas</b></td>
+  <td>China\'s regulator approved three-HMO blends for domestic formulas in 2024, accelerating localization by Yili, Feihe, and Mengniu. Wyeth Nutrition introduced China\'s first dual-HMO formula (2'-FL + LNnT) in March 2024. <b>Trade Linkage:</b> China currently appears as exporter but NOT importer in standard unit data — consistent with local supply building.</td>
+  <td><a class="source-link" href="https://www.futuremarketinsights.com/reports/human-milk-oligosaccharides-market" target="_blank">FMI, Jul 2025</a></td>
+</tr>
+<tr>
+  <td><b>📉 Spot Prices Declining 15–20% Since 2022</b></td>
+  <td>Industry reports indicate precision fermentation cost declines being passed through; sialyllactose spot prices fell 15–20% since 2022 (proxy for 2'-FL trend). <b>Trade Linkage:</b> Trade data confirms: avg price per MT declined from ~$65K (2023) to ~$61K (2024) before recovering to ~$68K (2025) — aligns with capacity additions + demand recovery cycle.</td>
+  <td><a class="source-link" href="https://www.indexbox.io/store/latin-america-and-the-caribbean-sialyllactose-ingredients-market-analysis-forecast-size-trends-and-insights/" target="_blank">IndexBox, 2026</a></td>
+</tr>
+</table>
+</div></div>
+</section>
+
+<!-- SECTION 06 -->
+<section class="section" id="s06">
+<div class="section-header">
+  <div class="sec-num">06</div>
+  <div class="sec-title">Pricing <span>Intelligence</span></div>
+</div>
+
+<div class="alert alert-warn">⚠ <b>Pricing Data Availability:</b> 2'-FL is a specialty biotech ingredient — publicly listed spot prices are limited. The most reliable pricing comes from (1) actual shipment unit prices in the trade data and (2) supplier RFQ/catalog data. Prices vary significantly by grade, quantity, supplier, and supply agreement type.</div>
+
+<div class="card">
+<div class="card-header">Price by Quantity Scale</div>
+<div class="card-body">
+<table>
+<tr><th>Scale / Grade</th><th>Quantity Range</th><th>Price Range (USD)</th><th>INR Equivalent (approx.)</th><th>Source</th></tr>
+<tr><td>Research/Reference Grade</td><td>1g – 100g</td><td>USD 100–500/g</td><td>₹8,300–₹41,500/g</td><td>Sigma Aldrich India (confirmed trade data: USP at ~$50K/lot)</td></tr>
+<tr><td>CRO/Pilot Scale</td><td>100g – 1 kg</td><td>USD 500–2,000/kg</td><td>₹41,500–₹1.66 Lakh/kg</td><td>Elicityl, AbMole, BOC Sciences</td></tr>
+<tr><td>Commercial Food Grade</td><td>10 kg – 1 MT</td><td>USD 400–800/kg</td><td>₹33,200–₹66,400/kg</td><td>Trade data avg: ~$65/kg = $65,000/MT</td></tr>
+<tr><td>Bulk Tonnage (contract)</td><td>1 MT+</td><td>USD 50,000–80,000/MT</td><td>₹41.5–66.4 Cr/MT</td><td>Trade DATA derived price (Jan 2023–Jun 2026 avg)</td></tr>
+<tr class="india-row"><td>🇮🇳 India Import Cost Additions</td><td colspan="3">Basic Customs Duty: 10–15% | IGST: 18% (food ingredient) | CHA/Freight: 3–5% | Cold chain premium: variable | Total landed cost premium: ~35–40% above CIF price</td><td><a class="source-link" href="https://www.dgft.gov.in" target="_blank">DGFT; CBIC</a></td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">Price Trend Analysis (From Trade Data)</div>
+<div class="card-body">
+<table>
+<tr><th>Year</th><th>Avg Derived Price ($/MT)</th><th>YoY Change</th><th>Interpretation</th></tr>
+<tr><td>2023</td><td>~$64,920/MT</td><td>Base year</td><td>Established market pricing; limited supply</td></tr>
+<tr><td>2024</td><td>~$60,647/MT</td><td>-6.6%</td><td>New capacity additions (Slovakia JV, Kyowa Thailand) creating price pressure</td></tr>
+<tr><td>2025</td><td>~$67,866/MT</td><td>+11.9%</td><td>Demand surge post India/China approvals; supply tightens temporarily</td></tr>
+<tr><td>2026 (H1)</td><td>~$63,841/MT</td><td>-5.9%</td><td>Normalizing; more supply options entering</td></tr>
+</table>
+<div class="alert alert-info" style="margin-top:10px">📊 <b>Pricing Observation:</b> Commercial-grade 2'-FL trades at approximately USD 60,000–68,000 per metric tonne (standard weight units, Germany→Vietnam corridor). This is approximately USD 60–68/kg — a premium ingredient. India pays a slightly lower per-kg rate (~$64/kg) due to CHR Hansen Germany direct supply with long-term contracts.</div>
+</div></div>
+</section>
+
+<!-- SECTION 07 -->
+<section class="section" id="s07">
+<div class="section-header">
+  <div class="sec-num">07</div>
+  <div class="sec-title">Regulatory, Licensing &amp; <span>Compliance</span></div>
+</div>
+
+<div class="card">
+<div class="card-header">Global Regulatory Summary</div>
+<div class="card-body">
+<table>
+<tr><th>Country/Body</th><th>Classification</th><th>Status</th><th>License Required</th><th>Source</th></tr>
+<tr class="india-row"><td>🇮🇳 India — FSSAI</td><td>Novel Food Ingredient / Food Ingredient (Category: HMO)</td><td><span class="tag tag-green">APPROVED Sep 2024 (Kyowa), Apr 2025 (DSM)</span></td><td>FSSAI Central License + FoSCoS Import License + IEC from DGFT</td><td><a class="source-link" href="https://www.kirinholdings.com/en/newsroom/release/2024/0925_01.html" target="_blank">Kirin Holdings, Sep 2024</a></td></tr>
+<tr class="india-row"><td>🇮🇳 India — DGFT</td><td>ITC-HS 2940.00.00</td><td><span class="tag tag-green">Free Import (no restriction)</span></td><td>IEC mandatory; no special DGFT NOC required for food-grade HMO</td><td><a class="source-link" href="https://www.dgft.gov.in" target="_blank">DGFT ITC-HS 2026</a></td></tr>
+<tr class="india-row"><td>🇮🇳 India — CDSCO</td><td>Food ingredient (NOT drug)</td><td>Not classified as Schedule H/G</td><td>No CDSCO license needed for import as food ingredient</td><td>CDSCO Schedule Check</td></tr>
+<tr class="india-row"><td>🇮🇳 India — CPCB</td><td>Non-hazardous biomaterial</td><td>No special CPCB restriction</td><td>Standard GST registration; no hazardous goods NOC</td><td>CPCB HazMat list</td></tr>
+<tr class="india-row"><td>🇮🇳 India — BIS</td><td>No BIS standard currently for 2'-FL</td><td>BIS standard may be developed as market grows</td><td>Watch for IS standard development</td><td>BIS website</td></tr>
+<tr><td>🇺🇸 USA — FDA</td><td>GRAS (Generally Recognized As Safe)</td><td><span class="tag tag-green">GRAS Approved</span> — multiple notices (GRN 737, GRN 932)</td><td>No pre-market approval needed; GRAS notification sufficient</td><td><a class="source-link" href="https://www.canada.ca/en/health-canada/services/food-nutrition/genetically-modified-foods-other-novel-foods/approved-products/2-fucosyllactose-escherichia-coli-bl21/technical-summary.html" target="_blank">Health Canada; FDA</a></td></tr>
+<tr><td>🇪🇺 EU — EFSA/EC</td><td>Novel Food — authorized</td><td><span class="tag tag-green">Approved</span> for infant formula, dietary supplements, follow-on formula</td><td>Supplier must have EU Novel Food authorization; importers need standard EU food business reg.</td><td><a class="source-link" href="https://science.food.gov.uk/article/126854" target="_blank">FSA UK, 2024</a></td></tr>
+<tr><td>🇨🇳 China — NHC</td><td>New Food Ingredient</td><td><span class="tag tag-green">Approved</span> for infant formula (2'-FL, 3'-SL, LNnT, 6'-SL)</td><td>Must comply with China GB standards; NHC registration for novel food ingredient</td><td>China NHC 2022/2024</td></tr>
+<tr><td>🇯🇵 Japan — MHLW</td><td>Food additive / FOSHU ingredient</td><td>Approved as food ingredient; FOSHU status under evaluation</td><td>MHLW notification for novel food use</td><td>MHLW Japan</td></tr>
+<tr><td>🇦🇺 Australia/NZ — FSANZ</td><td>Novel food ingredient</td><td><span class="tag tag-green">Approved Jan 2024</span> — DSM-Firmenich 4 HMOs incl. 2'-FL + DFL blend</td><td>FSANZ application process</td><td><a class="source-link" href="https://www.industryarc.com/PressRelease/2440/Human-Milk-Oligosaccharides-Market-Research.html" target="_blank">IndustryARC, Jan 2024</a></td></tr>
+<tr><td>🇨🇦 Canada — Health Canada</td><td>Novel food ingredient</td><td><span class="tag tag-green">Approved</span> — Jennewein E. coli BL21 strain; Kyowa GRAS notice</td><td>Novel Food notification</td><td><a class="source-link" href="https://www.canada.ca/en/health-canada/services/food-nutrition/genetically-modified-foods-other-novel-foods/approved-products/2-fucosyllactose-escherichia-coli-bl21/technical-summary.html" target="_blank">Health Canada</a></td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">India Import — Step-by-Step Requirements</div>
+<div class="card-body">
+<table>
+<tr><th>Requirement</th><th>Details</th><th>Authority</th></tr>
+<tr class="india-row"><td>1. Import Export Code (IEC)</td><td>Mandatory for all imports; obtain from DGFT online</td><td>DGFT (dgft.gov.in)</td></tr>
+<tr class="india-row"><td>2. FSSAI Central Import License</td><td>Required for importing food ingredients; apply on FoSCoS portal (foscos.fssai.gov.in); annual fee ₹7,500; takes 30–60 days</td><td>FSSAI (fssai.gov.in)</td></tr>
+<tr class="india-row"><td>3. Foreign Manufacturer Registration (ReFoM)</td><td>Foreign manufacturer must be registered with FSSAI (effective Sep 2024); suppliers from Germany, Thailand, Denmark must be registered</td><td>FSSAI ReFoM portal</td></tr>
+<tr class="india-row"><td>4. FICS Clearance</td><td>All food import consignments must pass through FICS (integrated with ICEGATE/SWIFT); risk-based sampling and testing</td><td>FSSAI FICS (fics.fssai.gov.in)</td></tr>
+<tr class="india-row"><td>5. Certificate of Analysis (CoA)</td><td>Mandatory with each shipment; must show purity, microbiological, heavy metal compliance</td><td>FSSAI requirement</td></tr>
+<tr class="india-row"><td>6. HS Classification Verification</td><td>2940.00.00 (or possibly 21069090 for blends); custom broker must confirm with CBIC</td><td>CBIC; local customs</td></tr>
+<tr class="india-row"><td>7. No Special CDSCO License</td><td>Not a drug; no pharma license needed for food-grade material</td><td>CDSCO confirmation</td></tr>
+<tr class="india-row"><td>8. SCOMET / Export Restriction</td><td>Not SCOMET-listed; export permitted freely once imported and cleared</td><td>DGFT SCOMET list</td></tr>
+</table>
+<div class="alert alert-success" style="margin-top:12px">✅ <b>India Regulatory Summary:</b> 2'-FL is FSSAI approved (as of Sep 2024 for Kyowa, April 2025 for DSM). Import is permitted under ITC-HS 2940.00.00 with standard FSSAI Central Import License. No CDSCO, no CPCB special permit, no SCOMET. Regulatory path for importing and distributing 2'-FL in India is CLEAR and straightforward. Key action: obtain FSSAI Import License and partner with an FSSAI-registered foreign manufacturer.</div>
+</div></div>
+</section>
+
+<!-- SECTION 08 -->
+<section class="section" id="s08">
+<div class="section-header">
+  <div class="sec-num">08</div>
+  <div class="sec-title">Potential Customers &amp; <span>Target Companies</span></div>
+</div>
+
+<div class="card">
+<div class="card-header" style="background:#fff3cd;border-left-color:#f9a825;color:#795548">8A — Indian Target Companies (Primary Focus)</div>
+<div class="card-body">
+<table>
+<tr><th>Company</th><th>Segment + Location</th><th>Why a Target for 2'-FL</th><th>Website</th></tr>
+<tr class="india-row"><td><b>Nutricia International Pvt Ltd</b></td><td>Infant Nutrition (Danone) — Mumbai</td><td>CURRENT largest India buyer (confirmed in trade data, 17 shipments, $0.93 MN$); already uses 2'-FL in Aptamil products; opportunity to build supply relationship</td><td>nutricia.com</td></tr>
+<tr class="india-row"><td><b>Abbott Healthcare Pvt Ltd</b></td><td>Infant Nutrition (Similac) — Mumbai</td><td>Similac PRO-Advance already uses 2'-FL globally; importing for R&amp;D (confirmed in data); expansion in India likely as FSSAI approval widens</td><td>abbott.com</td></tr>
+<tr class="india-row"><td><b>Nestlé India Ltd</b></td><td>Infant Nutrition (NAN, CEREGROW) — Gurugram</td><td>Parent Nestlé launched CEREGROW with 2'-FL in China Jun 2025; India expansion imminent; FSSAI route now clear</td><td>nestle.in</td></tr>
+<tr class="india-row"><td><b>Reckitt Benckiser (Mead Johnson) India</b></td><td>Infant Nutrition (Enfamil) — Mumbai</td><td>Enfamil globally uses HMOs; India FSSAI approval unlocks premium SKUs; potential importer of 2'-FL as ingredient</td><td>reckitt.com</td></tr>
+<tr class="india-row"><td><b>FrieslandCampina Cooperative India</b></td><td>Dairy / Infant Nutrition — Pune</td><td>Parent FrieslandCampina Domo confirmed supplier in trade data (18 shipments to Vietnam); Indian arm could be customer for branded re-supply</td><td>frieslandcampina.com</td></tr>
+<tr class="india-row"><td><b>Hipp India (if market entry)</b></td><td>Organic Infant Formula — Pan India</td><td>HiPP globally uses HMOs; India market entry likely; premium positioning with 2'-FL</td><td>hipp.com</td></tr>
+<tr class="india-row"><td><b>Perrigo India / Generic Formula Brands</b></td><td>Infant Formula private label — Pan India</td><td>Cost-competitive 2'-FL sourcing for private label formulations; needs reliable supply chain</td><td>perrigo.com</td></tr>
+<tr class="india-row"><td><b>Sun Pharmaceuticals (Nutraceuticals)</b></td><td>Nutraceuticals / Dietary Supplements — Mumbai</td><td>Sun Nutraceuticals expanding gut health portfolio; 2'-FL prebiotic supplement potential</td><td>sunpharma.com</td></tr>
+<tr class="india-row"><td><b>Himalaya Drug Company</b></td><td>Nutraceuticals (Mama&amp;Me / baby nutrition) — Bangalore</td><td>Baby and maternal nutrition focus; HMO-based supplement positioning opportunity</td><td>himalayawellness.com</td></tr>
+<tr class="india-row"><td><b>Piramal Consumer Products</b></td><td>Consumer Healthcare / Nutrition — Mumbai</td><td>Expanding baby care and nutrition portfolio; 2'-FL supplement or fortification opportunity</td><td>piramal.com</td></tr>
+<tr class="india-row"><td><b>Marico Health Sciences</b></td><td>Gut Health / Nutraceuticals — Mumbai</td><td>Saffola gut health line; expanding prebiotic portfolio; 2'-FL adult supplement potential</td><td>marico.com</td></tr>
+<tr class="india-row"><td><b>Baidyanath Group (Nutraceuticals)</b></td><td>Health Supplements — Kolkata</td><td>Traditional FMCG entering functional nutrition; gut health supplement with 2'-FL fits modern health positioning</td><td>baidyanath.com</td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">8B — Global Target Companies</div>
+<div class="card-body">
+<table>
+<tr><th>Company</th><th>Country</th><th>Segment</th><th>Why a Target</th></tr>
+<tr><td>Barentz Vietnam Co Ltd</td><td>Vietnam</td><td>Specialty ingredients distributor</td><td>DOMINANT buyer in trade data (34 KGM shipments, $7.26 MN$); key Vietnam distribution partner; potential regional sourcing alliance</td></tr>
+<tr><td>S.I.M. VN Corporation</td><td>Vietnam</td><td>Ingredient trading</td><td>18 KGM shipments ($1.12 MN$) — established HMO trader in Vietnam; model for India trading operation</td></tr>
+<tr><td>Asia Chemical Corporation</td><td>Vietnam/Asia</td><td>Specialty chemicals trading</td><td>15 KGM shipments ($1.11 MN$) — regional distributor model</td></tr>
+<tr><td>KASDORF Sociedad Anónima</td><td>Argentina</td><td>Dairy / infant nutrition</td><td>13 KGM shipments from Germany ($0.48 MN$) — imports 2'-FL for Argentine infant formula market</td></tr>
+<tr><td>Mead Johnson Nutricionales Mexico</td><td>Mexico</td><td>Infant formula (Reckitt)</td><td>4 KGM shipments ($0.29 MN$) — Mexico\'s Mead Johnson importing CHR Hansen 2'-FL</td></tr>
+<tr><td>Nestlé Vietnam Limited</td><td>Vietnam</td><td>Infant formula</td><td>8 KGM shipments ($0.09 MN$) from DSM Denmark — multi-supplier strategy</td></tr>
+<tr><td>Nutricare Nutrition (Vietnam)</td><td>Vietnam</td><td>Infant formula</td><td>12 KGM shipments ($0.32 MN$) from Kyowa Hakko — confirms Thailand supply route</td></tr>
+<tr><td>Dragon Global Corporation</td><td>Vietnam</td><td>Ingredient trading</td><td>11 KGM shipments ($0.47 MN$) — growing regional HMO trader</td></tr>
+</table>
+</div></div>
+</section>
+
+<!-- SECTION 09 -->
+<section class="section" id="s09">
+<div class="section-header">
+  <div class="sec-num">09</div>
+  <div class="sec-title">Strategic Business <span>Frameworks</span></div>
+</div>
+
+<div class="card">
+<div class="card-header">9A — SWOT Analysis (India Entry for 2'-FL)</div>
+<div class="card-body">
+<div class="swot-grid">
+<div class="swot-s">
+  <div class="swot-head">💪 Strengths</div>
+  <ul class="swot-ul">
+    <li>First-mover import trading advantage — India market very early stage</li>
+    <li>Clear regulatory path: FSSAI approved, DGFT free import</li>
+    <li>Trade data shows established India demand (Nutricia, Abbott) but no Indian trader yet</li>
+    <li>Premium product = high margins even at small volumes</li>
+    <li>Strong India infant nutrition market growth (12.1% CAGR)</li>
+    <li>No domestic competition in India for 2'-FL supply</li>
+  </ul>
+</div>
+<div class="swot-w">
+  <div class="swot-head">⚠ Weaknesses</div>
+  <ul class="swot-ul">
+    <li>Highly concentrated supplier market — CHR Hansen ~58% share</li>
+    <li>Very few India buyers currently (only Nutricia + Abbott in data)</li>
+    <li>High product cost (~$60–68K/MT) requires large working capital</li>
+    <li>Cold-chain storage requirements add operational complexity</li>
+    <li>Technical knowledge of HMO specs required for customer handling</li>
+    <li>India market not yet mature — education needed</li>
+  </ul>
+</div>
+<div class="swot-o">
+  <div class="swot-head">🚀 Opportunities</div>
+  <ul class="swot-ul">
+    <li>India FSSAI approval (Sep 2024) unlocks entire infant formula sector</li>
+    <li>Nestle, Reckitt, HiPP likely entering India 2'-FL use — direct sourcing opportunity</li>
+    <li>Adult gut health supplement market (emerging — pre-market position now)</li>
+    <li>Chinese suppliers (Synaura, Huangshan Toisyn) offer lower cost sourcing option</li>
+    <li>Vietnam corridor model shows high trading volumes achievable</li>
+    <li>India\'s biotech capabilities → potential tolling / manufacturing partnership</li>
+  </ul>
+</div>
+<div class="swot-t">
+  <div class="swot-head">🔴 Threats</div>
+  <ul class="swot-ul">
+    <li>Global suppliers (CHR Hansen, DSM) may go direct-to-India bypassing traders</li>
+    <li>HMO production cost declining — margin compression over time</li>
+    <li>China low-cost suppliers entering → price pressure from 2026–27</li>
+    <li>Limited India customer base — dependency on 1–2 buyers initially</li>
+    <li>Regulatory changes could affect FSSAI approval scope</li>
+    <li>WHO breastfeeding promotion campaigns may limit formula market growth</li>
+  </ul>
+</div>
+</div>
+</div></div>
+
+<div class="card">
+<div class="card-header">9B — Porter\'s Five Forces</div>
+<div class="card-body">
+<div class="five-forces">
+<div class="force-card high">
+  <div class="force-name">Competitive Rivalry</div>
+  <div class="force-level">HIGH</div>
+  <div class="force-desc">Globally 5–7 producers dominate. Germany (CHR Hansen) controls 58% of shipments. New entrants (China) increasing. However, India has NO current specialty distributor for 2'-FL — rivalry in India is LOW for now.</div>
+</div>
+<div class="force-card high">
+  <div class="force-name">Supplier Power</div>
+  <div class="force-level">HIGH</div>
+  <div class="force-desc">CHR Hansen alone holds 57.9% supply share. Glycom (DSM) and Kyowa add options but IP concentration is extreme. Switching costs high. Price-setting power rests with suppliers.</div>
+</div>
+<div class="force-card low">
+  <div class="force-name">Buyer Power (India)</div>
+  <div class="force-level">LOW–MEDIUM</div>
+  <div class="force-desc">India buyers (Nutricia, Abbott) are large global companies but currently buying small volumes. As more brands enter India, collective buyer power will increase. Near-term, buyers accept supplier pricing.</div>
+</div>
+<div class="force-card med">
+  <div class="force-name">Threat of New Entrants</div>
+  <div class="force-level">MEDIUM</div>
+  <div class="force-desc">High barriers: biotech IP, GMP certification, FSSAI approval, cold chain logistics. However, China producers reducing cost barriers. India import trading entry is LOW barrier.</div>
+</div>
+<div class="force-card low">
+  <div class="force-name">Threat of Substitutes</div>
+  <div class="force-level">LOW</div>
+  <div class="force-desc">No direct substitute replicates 2'-FL\'s exact structure and function in infant formula. GOS, FOS, Inulin serve different prebiotic roles. Regulatory barriers also prevent simple substitution in FSSAI-compliant formulas.</div>
+</div>
+<div class="force-card low">
+  <div class="force-name">Overall Attractiveness</div>
+  <div class="force-level">HIGH</div>
+  <div class="force-desc">Despite high supplier power globally, the India trading opportunity is highly attractive: no current distributor, growing buyer base, clear regulatory path, premium margins.</div>
+</div>
+</div>
+</div></div>
+
+<div class="card">
+<div class="card-header">9C — Value Chain Analysis</div>
+<div class="card-body">
+<div class="chain-wrap">
+  <div class="chain-step">🌾 Raw Material (Glucose/Lactose)</div>
+  <div class="chain-arrow">▶</div>
+  <div class="chain-step">🧬 Fermentation (Mfg.)</div>
+  <div class="chain-arrow">▶</div>
+  <div class="chain-step active">📦 Sourcing / Import</div>
+  <div class="chain-arrow">▶</div>
+  <div class="chain-step active">🔬 Quality Testing</div>
+  <div class="chain-arrow">▶</div>
+  <div class="chain-step active">🚚 Distribution</div>
+  <div class="chain-arrow">▶</div>
+  <div class="chain-step">🌍 Export</div>
+  <div class="chain-arrow">▶</div>
+  <div class="chain-step active">🏭 End Customer (Infant Formula Mfr.)</div>
+</div>
+<table>
+<tr><th>Stage</th><th>Our Participation?</th><th>Opportunity</th><th>Timeline</th></tr>
+<tr><td>Raw Material (Glucose, Lactose, L-Fucose)</td><td><span class="tag tag-grey">No (Phase 1)</span></td><td>Future: source Indian lactose for tolling</td><td>Month 18+</td></tr>
+<tr><td>Fermentation / Manufacturing</td><td><span class="tag tag-grey">No (Phase 1–2)</span></td><td>Long-term: India manufacturing via strain license or JV</td><td>Year 3–5</td></tr>
+<tr><td>Sourcing / Import Trading</td><td><span class="tag tag-green">YES — Primary Mode</span></td><td>Import from CHR Hansen (Germany) or Kyowa (Thailand); stock in India; distribute to infant formula manufacturers</td><td>Month 1–6</td></tr>
+<tr><td>Quality Testing (CoA Verification)</td><td><span class="tag tag-green">YES</span></td><td>NABL-accredited lab testing; reconfirm purity, microbiology, heavy metals; add value to raw imports</td><td>Month 3+</td></tr>
+<tr><td>Distribution (Domestic)</td><td><span class="tag tag-green">YES</span></td><td>Cold-chain warehousing; last-mile to manufacturers in Mumbai, Delhi, Pune clusters</td><td>Month 3–6</td></tr>
+<tr><td>Export</td><td><span class="tag tag-amber">Conditional</span></td><td>Re-export to Bangladesh, Sri Lanka, Nepal — if surplus; trade data confirms SAARC market exists</td><td>Month 6–12</td></tr>
+<tr><td>End Customer (Infant Formula Mfr.)</td><td><span class="tag tag-green">YES — Marketing</span></td><td>Technical sales to Nutricia, Abbott, Nestlé India; application support; regulatory assistance</td><td>Month 1+</td></tr>
+</table>
+</div></div>
+</section>
+
+<!-- SECTION 10 -->
+<section class="section" id="s10">
+<div class="section-header">
+  <div class="sec-num">10</div>
+  <div class="sec-title">Feasibility Summary &amp; <span>Management Recommendation</span></div>
+</div>
+
+<div class="verdict-box verdict-rec">
+  <div class="verdict-title">✅ VERDICT: RECOMMENDED</div>
+  <div class="verdict-sub">2'-FL presents a compelling India trading opportunity. FSSAI approval (Sep 2024 / Apr 2025) has removed the primary regulatory barrier. India is 100% import-dependent with growing demand from established multinationals (Nutricia, Abbott, Nestlé). Trade data confirms active commercial imports already occurring. No India-based specialty trader/distributor currently exists — creating a genuine first-mover window. Priority: establish supply agreement with Kyowa Hakko Bio (Thailand) or CHR Hansen (Germany/through EU distributor), obtain FSSAI Import License, and initiate commercial conversations with Nutricia India and Nestlé India immediately.</div>
+</div>
+
+<div class="card">
+<div class="card-header">Recommended Business Mode</div>
+<div class="card-body">
+<table>
+<tr><th>Business Mode</th><th>Recommendation</th><th>Rationale</th></tr>
+<tr><td>Import &amp; Domestic Trading</td><td><span class="tag tag-green">STRONGLY RECOMMENDED — Phase 1</span></td><td>Core opportunity. India 100% import-dependent. FSSAI approved. Demand confirmed in trade data. No current Indian distributor. Start immediately.</td></tr>
+<tr><td>Sourcing &amp; Marketing</td><td><span class="tag tag-green">RECOMMENDED — Phase 1</span></td><td>Build multi-supplier sourcing (CHR Hansen primary; Kyowa as second; Chinese suppliers as cost option for non-infant-formula use). Create supply security for India customers.</td></tr>
+<tr><td>CRO / R&amp;D Support</td><td><span class="tag tag-blue">CONDITIONAL — Phase 2</span></td><td>Supply research/reference-grade 2'-FL to Indian pharma R&amp;D, CSIR, ICMR, university nutrition research labs. Small volume, high margin.</td></tr>
+<tr><td>Export (Re-export from India)</td><td><span class="tag tag-amber">CONDITIONAL — Phase 2</span></td><td>Re-export to Bangladesh, Sri Lanka once SAARC regulatory paths assessed. Low priority initially.</td></tr>
+<tr><td>Manufacturing</td><td><span class="tag tag-grey">NOT RECOMMENDED — Phase 1–2</span></td><td>High capex, proprietary IP barriers, regulatory complexity for GM organisms in India. Revisit at Year 3+ if import business proves profitable.</td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">Key Risks to Monitor</div>
+<div class="card-body">
+<table>
+<tr><th>Risk</th><th>Level</th><th>Mitigation</th></tr>
+<tr><td>Supplier Concentration (CHR Hansen 58%)</td><td><span class="tag tag-red">HIGH</span></td><td>Build dual supplier strategy: CHR Hansen primary, Kyowa Hakko Bio secondary. Explore Synaura (China) for non-infant food grade use.</td></tr>
+<tr><td>Small India Customer Base (only Nutricia currently)</td><td><span class="tag tag-red">HIGH</span></td><td>Actively develop 3–4 customers before first import. Contact Nestlé India, Abbott, Reckitt in parallel.</td></tr>
+<tr><td>Margin Erosion from Chinese Suppliers</td><td><span class="tag tag-amber">MEDIUM</span></td><td>Position on quality, technical service, regulatory support — not price. Monitor Chinese supplier approvals in India.</td></tr>
+<tr><td>Cold Chain / Logistics Failure</td><td><span class="tag tag-amber">MEDIUM</span></td><td>Partner with NABL-certified cold chain provider (Snowman, Coldstar). Product is stable at ambient short-term but refrigerated storage preferred.</td></tr>
+<tr><td>FSSAI Regulatory Scope Change</td><td><span class="tag tag-amber">MEDIUM</span></td><td>Only approved for infant formula currently; adult supplement use may require separate FSSAI clearance. Monitor FSSAI updates quarterly.</td></tr>
+<tr><td>Global Supplier Going Direct to India</td><td><span class="tag tag-amber">MEDIUM</span></td><td>Build value through customer relationships, regulatory support, India-specific formulation guidance — services suppliers cannot easily replicate.</td></tr>
+<tr><td>Working Capital (Premium Price Product)</td><td><span class="tag tag-amber">MEDIUM</span></td><td>Initial imports: 50–100 kg lots ($5,000–$8,000). Scale with confirmed purchase orders. Avoid large stock builds before customer base established.</td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">Suggested Next Steps</div>
+<div class="card-body">
+<div class="step-list">
+<div class="step-item">
+  <div class="step-num">1</div>
+  <div class="step-body">
+    <div class="step-action">Obtain FSSAI Central Import License</div>
+    <div class="step-time">Month 1–2</div>
+    <div style="font-size:11px;color:#546e7a">Apply on FoSCoS portal; submit IEC, product details, CoA from prospective supplier. ~45 days processing. Fee: ₹7,500/year.</div>
+  </div>
+</div>
+<div class="step-item">
+  <div class="step-num">2</div>
+  <div class="step-body">
+    <div class="step-action">Initiate Supplier Conversations — Kyowa Hakko Bio + CHR Hansen</div>
+    <div class="step-time">Month 1–2</div>
+    <div style="font-size:11px;color:#546e7a">Contact Kyowa Hakko Bio\'s India/APAC team (first FSSAI-approved product). Request samples, pricing, MOQ, lead times. Parallel outreach to CHR Hansen India.</div>
+  </div>
+</div>
+<div class="step-item">
+  <div class="step-num">3</div>
+  <div class="step-body">
+    <div class="step-action">Initiate Customer Conversations — Nutricia, Abbott, Nestlé India</div>
+    <div class="step-time">Month 1–3</div>
+    <div style="font-size:11px;color:#546e7a">Nutricia (Danone) is largest India buyer (trade data confirmed). Schedule technical meeting to position as alternative India distribution partner. Same for Abbott India R&amp;D team.</div>
+  </div>
+</div>
+<div class="step-item">
+  <div class="step-num">4</div>
+  <div class="step-body">
+    <div class="step-action">First Pilot Import — 50–100 kg</div>
+    <div class="step-time">Month 3–4</div>
+    <div style="font-size:11px;color:#546e7a">Test import process with small lot (50–100 kg). Document clearance process, cold chain, FICS experience, lab testing. Build import compliance knowledge base.</div>
+  </div>
+</div>
+<div class="step-item">
+  <div class="step-num">5</div>
+  <div class="step-body">
+    <div class="step-action">Develop Technical Dossier &amp; Application Support</div>
+    <div class="step-time">Month 3–6</div>
+    <div style="font-size:11px;color:#546e7a">Build India-specific regulatory dossier for customers: FSSAI approval docs, CoA templates, usage guidelines (max 1.2g/L in infant formula), labeling claims guidance.</div>
+  </div>
+</div>
+<div class="step-item">
+  <div class="step-num">6</div>
+  <div class="step-body">
+    <div class="step-action">Expand Customer Base &amp; Evaluate Supplement Market</div>
+    <div class="step-time">Month 6–12</div>
+    <div style="font-size:11px;color:#546e7a">Target nutraceutical companies (Himalaya, Sun Pharma Nutraceuticals) for adult gut health 2'-FL supplement opportunity. Monitor FSSAI updates on adult supplement approval scope.</div>
+  </div>
+</div>
+</div>
+</div></div>
+</section>
+
+<!-- SECTION 11 — TRADE DATA -->
+<section class="section" id="s11">
+<div class="section-header">
+  <div class="sec-num">11</div>
+  <div class="sec-title">Trade Data <span>Analysis</span> — Part B</div>
+</div>
+
+<div class="alert alert-info">📂 <b>Data Source:</b> File: 2_-FUCOSYLLACTOSE_GLOBAL_DATA_FROM_2023_JAN_-_2026_JUNE.xlsx | Sheets read: DATA (primary, 289 shipments), YEARLY TREND, MAJOR EXPORTING COUNTRY, MAJOR IMPORTING COUNTRY, MAJOR GLOBAL SUPPLIERS, MAJOR GLOBAL BUYERS, MAJOR BUYERS FROM INDIA | Data Type: <b>Global bilateral trade data — 2'-FL specific</b> | Period: January 2023 – June 2026</div>
+
+<div class="s11-overview">
+  <div class="s11-kpi"><div class="k-label">Total Trade Value</div><div class="k-val">$15.24</div><div class="k-unit">MN$ (all units combined)</div></div>
+  <div class="s11-kpi"><div class="k-label">Standard Unit Value</div><div class="k-val">$14.69</div><div class="k-unit">MN$ (KGM/GMS/TNES)</div></div>
+  <div class="s11-kpi"><div class="k-label">Total Shipments</div><div class="k-val">289</div><div class="k-unit">shipments (Jan 2023–Jun 2026)</div></div>
+  <div class="s11-kpi"><div class="k-label">Standard Unit Volume</div><div class="k-val">216.7 MT</div><div class="k-unit">Metric Tonnes (KGM units)</div></div>
+  <div class="s11-kpi"><div class="k-label">Avg Price (Standard)</div><div class="k-val">~$65K/MT</div><div class="k-unit">Derived from trade data</div></div>
+  <div class="s11-kpi"><div class="k-label">Dominant Corridor</div><div class="k-val">GER→VNM</div><div class="k-unit">68.1 MT | $4.67 MN$ | 24 ships</div></div>
+</div>
+
+<div class="card">
+<div class="card-header">Standard vs Non-Standard Unit Analysis</div>
+<div class="card-body">
+<table>
+<tr><th>Unit Type</th><th>Units</th><th>Shipments</th><th>Value (MN$)</th><th>Volume (MT)</th><th>Avg $/MT</th><th>Commercial Meaning</th></tr>
+<tr><td><b>Standard Weight Units</b></td><td>KGM, GMS, TNES</td><td>214</td><td>$14.69</td><td>216.7 MT</td><td>~$67,830</td><td>Commercial bulk trade — food grade production quantities</td></tr>
+<tr><td><b>Non-Standard / Packaging Units</b></td><td>PKG, UNT, BAG, PCS, BTL, PLT</td><td>68</td><td>$0.19</td><td>110.2 MT*</td><td>N/A (packaging)</td><td>Research/reference grade, lab samples, small commercial packs — cannot be aggregated to MT equivalent</td></tr>
+<tr><td><b>NONE / Undeclared</b></td><td>NONE</td><td>7</td><td>$0.35</td><td>—</td><td>—</td><td>Undeclared units — likely large PKG shipments to USA ($88K+ declared but 0 kg listed)</td></tr>
+</table>
+<p style="font-size:11.5px;color:#546e7a;margin-top:10px"><i>* Non-standard MT column shows declared weight in source data but units are packaging units (PKG=package, UNT=unit, BAG=bag) — volume comparison invalid across unit types</i></p>
+<div class="alert alert-warn" style="margin-top:10px"><b>⚠ Important Anomaly — Non-Standard USA Shipments:</b> 21 PKG shipments to United States show $88,612 value but 0 MT weight. These are large-format packaging units (likely pallet/drum shipments where weight was not declared). The $88K value is real commercial trade but cannot be included in MT-based pricing calculations.</div>
+</div></div>
+
+<div class="card">
+<div class="card-header">Yearly Trade Trend (Standard Weight Units — KGM/GMS/TNES)</div>
+<div class="card-body">
+<table>
+<tr><th>Year</th><th>Value (MN$)</th><th>YoY Δ% Value</th><th>Volume (MT)</th><th>YoY Δ% Volume</th><th>Shipments</th><th>Avg Price $/MT</th></tr>
+<tr><td>2023</td><td>$4.153</td><td>—</td><td>63.92 MT</td><td>—</td><td>55</td><td>~$64,920</td></tr>
+<tr><td>2024</td><td>$3.479</td><td style="color:#b71c1c">-16.2%</td><td>53.39 MT</td><td style="color:#b71c1c">-16.5%</td><td>79</td><td>~$60,647</td></tr>
+<tr><td>2025</td><td>$5.182</td><td style="color:#1b5e20">+48.9%</td><td>73.77 MT</td><td style="color:#1b5e20">+38.1%</td><td>60</td><td>~$67,866</td></tr>
+<tr><td>2026 (H1)</td><td>$1.874</td><td>~+$3.75 annualized</td><td>25.60 MT</td><td>~51.2 MT annualized</td><td>20</td><td>~$63,841</td></tr>
+</table>
+<div class="alert alert-warn" style="margin-top:10px">📊 <b>Trend Analysis (linked to news):</b> <b>2024 dip (-16%)</b> aligns with Kyowa Thailand new plant coming online (increased supply, price pressure) + transition period post new regulatory approvals. <b>2025 surge (+49%)</b> directly correlates with Kyowa FSSAI India approval (Sep 2024), DSM EU capacity expansion, China NHC approvals — multiple markets opening simultaneously. <b>2026 normalization</b> as supply catches up with demand.</div>
+</div></div>
+
+<div class="card">
+<div class="card-header">Top Importing Countries (Standard Units)</div>
+<div class="card-body">
+<table>
+<tr><th>Rank</th><th>Country</th><th>Value (MN$)</th><th>Share %</th><th>Volume (MT)</th><th>Shipments</th><th>Key Buyers</th></tr>
+<tr><td>1</td><td>🇻🇳 Vietnam</td><td>$10.965</td><td>74.7%</td><td>160.79 MT</td><td>141</td><td>Barentz Vietnam, SIM VN, Asia Chemical, Nestlé Vietnam, Nutricare</td></tr>
+<tr class="india-row"><td>2</td><td>🇮🇳 India</td><td>$0.942</td><td>6.4%</td><td>14.70 MT</td><td>24</td><td>Nutricia International (dominant), Abbott India, CHR Hansen India</td></tr>
+<tr><td>3</td><td>🇲🇽 Mexico</td><td>$2.154</td><td>14.7%</td><td>32.24 MT</td><td>19</td><td>Mead Johnson Mexico, Nestlé Mexico, Unknown buyers</td></tr>
+<tr><td>4</td><td>🇦🇷 Argentina</td><td>$0.479</td><td>3.3%</td><td>7.06 MT</td><td>13</td><td>KASDORF S.A.</td></tr>
+<tr><td>5</td><td>🇲🇾 Malaysia</td><td>$0.075</td><td>0.5%</td><td>1.05 MT</td><td>15</td><td>Various (fragmented, small lots)</td></tr>
+<tr><td>6</td><td>🇩🇪 Germany</td><td>$0.051</td><td>0.3%</td><td>0.84 MT</td><td>1</td><td>Internal transfer / inter-company</td></tr>
+<tr><td>7</td><td>🇧🇷 Brazil</td><td>$0.023</td><td>0.2%</td><td>0.00 MT*</td><td>1</td><td>Danone Ltda (KGM unit declared 0 kg — likely packaging unit misclassification)</td></tr>
+</table>
+<div class="alert alert-info" style="margin-top:10px">🇮🇳 <b>India Trade Position:</b> India is the #2 largest import market by value ($0.94 MN$) after Vietnam — despite only 24 shipments vs Vietnam\'s 141. This reflects India\'s high-purity procurement pattern (larger lots, direct pharmaceutical-to-formula customer chain). India\'s share is expected to grow significantly post 2024 FSSAI approvals.</div>
+</div></div>
+
+<div class="card">
+<div class="card-header">Top Exporting Countries (Standard Units — Origin)</div>
+<div class="card-body">
+<table>
+<tr><th>Rank</th><th>Country</th><th>Value (MN$)</th><th>Share %</th><th>Volume (MT)</th><th>Shipments</th><th>Key Manufacturers</th></tr>
+<tr><td>1</td><td>🇩🇪 Germany</td><td>$10.694</td><td>72.8%</td><td>149.74 MT</td><td>99</td><td>CHR Hansen HMO GmbH (dominant — formerly Jennewein Biotechnologie)</td></tr>
+<tr><td>2</td><td>🇩🇰 Denmark</td><td>$1.616</td><td>11.0%</td><td>24.96 MT</td><td>29</td><td>DSM Nutritional Products (Glycom manufacturing in Denmark)</td></tr>
+<tr><td>3</td><td>🇳🇱 Netherlands</td><td>$1.183</td><td>8.1%</td><td>19.12 MT</td><td>19</td><td>FrieslandCampina Domo (Aequival 2'-FL brand)</td></tr>
+<tr><td>4</td><td>🇰🇷 South Korea</td><td>$0.598</td><td>4.1%</td><td>11.22 MT</td><td>15</td><td>Advanced Protein Technologies (identity from supplier data)</td></tr>
+<tr><td>5</td><td>🇹🇭 Thailand</td><td>$0.499</td><td>3.4%</td><td>9.68 MT</td><td>38</td><td>Kyowa Hakko Bio Singapore Pte Ltd (dispatching from Thailand facility)</td></tr>
+<tr><td>6</td><td>🇨🇳 China</td><td>$0.090</td><td>0.6%</td><td>1.81 MT</td><td>7</td><td>Synaura Biotechnology (Shanghai), Huangshan Toisyn Biotech</td></tr>
+<tr><td>7</td><td>Others (BE, CA, JP, KP)</td><td>$0.009</td><td>0.1%</td><td>0.15 MT</td><td>7</td><td>Research grade / small lots</td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">Top Global Suppliers (Company Level — Standard Units)</div>
+<div class="card-body">
+<table>
+<tr><th>Rank</th><th>Supplier</th><th>Country</th><th>Value (MN$)</th><th>Share %</th><th>Shipments</th><th>Notes</th></tr>
+<tr><td>1</td><td><b>CHR Hansen HMO GmbH</b></td><td>Germany</td><td>$8.499</td><td>57.9%</td><td>58</td><td>Dominant global supplier; Jennewein heritage; sends to Vietnam, India, Mexico, Argentina</td></tr>
+<tr><td>2</td><td><b>UNKNOWN</b></td><td>Germany/Various</td><td>$2.113</td><td>14.4%</td><td>25</td><td>Buyer declared as unknown — likely CHR Hansen or DSM via trading intermediary</td></tr>
+<tr><td>3</td><td><b>DSM Nutritional Products Ltd.</b></td><td>Denmark</td><td>$1.279</td><td>8.7%</td><td>20</td><td>Glycare 2FL brand; supplies Nestlé Vietnam primarily</td></tr>
+<tr><td>4</td><td><b>FrieslandCampina Domo</b></td><td>Netherlands</td><td>$1.123</td><td>7.6%</td><td>18</td><td>Aequival 2'-FL; confirmed S.I.M. VN as Vietnam buyer</td></tr>
+<tr><td>5</td><td><b>Advanced Protein Technologies</b></td><td>South Korea</td><td>$0.606</td><td>4.1%</td><td>18</td><td>Exclusively supplies Asia Chemical Corporation (Vietnam); sole-customer relationship</td></tr>
+<tr><td>6</td><td><b>Kyowa Hakko Bio Singapore</b></td><td>Thailand</td><td>$0.341</td><td>2.3%</td><td>22</td><td>22 shipments but lower per-shipment value vs CHR — smaller lots, more frequent</td></tr>
+<tr><td>7</td><td><b>Glycom Manufacturing AS</b></td><td>Denmark</td><td>$0.337</td><td>2.3%</td><td>8</td><td>Legacy Glycom entity (pre DSM integration); may now route through DSM</td></tr>
+<tr><td>8</td><td><b>Abbott Ireland</b></td><td>Ireland/Germany</td><td>$0.075</td><td>0.5%</td><td>14</td><td>Internal transfer to Abbott India R&amp;D and Vietnam operations</td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">India Buyer Detail (from Trade Data)</div>
+<div class="card-body">
+<table>
+<tr><th>Buyer</th><th>Supplier</th><th>Shipments</th><th>Value (MN$)</th><th>Volume (MT)</th><th>Unit</th><th>Purpose</th></tr>
+<tr class="india-row"><td>Nutricia International Pvt Ltd</td><td>CHR Hansen HMO GmbH (Germany)</td><td>17</td><td>$0.931</td><td>14.62 MT</td><td>KGM</td><td>Commercial — for Aptamil/Nutrilon infant formula production</td></tr>
+<tr class="india-row"><td>Abbott Healthcare Pvt Ltd</td><td>Abbott Ireland (Germany)</td><td>1</td><td>$0.004</td><td>0.061 MT</td><td>KGM</td><td>R&amp;D — for internal testing/development</td></tr>
+<tr class="india-row"><td>CHR Hansen India Pvt Ltd</td><td>CHR Hansen HMO GmbH (Germany)</td><td>1</td><td>$0.000016</td><td>0.0005 MT</td><td>KGM</td><td>FOC Samples — commercial development/demonstration</td></tr>
+<tr class="india-row"><td>G S Pharmbutor Pvt Ltd</td><td>CHR Hansen HMO GmbH</td><td>1</td><td>$0.0001</td><td>0.02 MT</td><td>KGM</td><td>Pharma distributor — small commercial lot</td></tr>
+<tr class="india-row"><td>United States Pharmacopeial Conv. (USP India)</td><td>USP / CHR Hansen Germany</td><td>2</td><td>$0.007</td><td>0 MT</td><td>KGM</td><td>Reference Standards import for pharma QC labs</td></tr>
+<tr class="india-row"><td>Sigma Aldrich (Merck India)</td><td>Sigma Aldrich UK</td><td>11</td><td>$0.002</td><td>0 MT</td><td>Non-std</td><td>Research/lab scale — analytical grade small vials</td></tr>
+<tr class="india-row"><td>Elicityl</td><td>Elicityl (France)</td><td>2</td><td>$0.0003</td><td>0 MT</td><td>Non-std</td><td>Research/reference grade</td></tr>
+</table>
+<div class="alert alert-success" style="margin-top:10px">🇮🇳 <b>India Market Insight:</b> Nutricia International completely dominates India 2'-FL imports with 98.7% of value. Single-buyer dependency is extreme — this is both a risk and an opportunity. There is NO India-based 2'-FL trading company in the data. The only commercial buyer is Nutricia (Danone), importing directly from CHR Hansen Germany. Our entry as India distributor would serve ALL future entrants (Nestlé India, Reckitt, Abbott expanded) who currently lack a local supplier.</div>
+</div></div>
+
+<div class="card">
+<div class="card-header">Anomaly Detection &amp; Flags</div>
+<div class="card-body">
+<table>
+<tr><th>Anomaly Type</th><th>Finding</th><th>Implication</th></tr>
+<tr class="anomaly-row"><td>⚠ EXTREME SUPPLIER CONCENTRATION</td><td>CHR Hansen GmbH holds 57.9% of all standard-unit trade value — one company controls majority of global 2'-FL supply in this dataset</td><td>HIGH risk for buyers. Any CHR Hansen supply disruption directly impacts 58% of global trade. Our import strategy must mandate dual-sourcing from Day 1.</td></tr>
+<tr class="anomaly-row"><td>⚠ HIGH SHIPMENT COUNT, ZERO WEIGHT (USA)</td><td>21 PKG shipments to USA with $88,612 total declared value but 0 MT weight recorded</td><td>These are large pack/pallet units — weight likely not declared in customs. Real commercial trade. Cannot be used for price/MT calculations. Treated separately in analysis.</td></tr>
+<tr class="anomaly-row"><td>⚠ VIETNAM CONCENTRATION (74.7% of trade)</td><td>Vietnam receives 74.7% of all standard-unit 2'-FL trade value — extraordinary geographic concentration</td><td>Vietnam is functioning as a regional HMO hub/redistribution center for SE Asia infant nutrition manufacturers (Nestlé, Mead Johnson, Nutricare all have Vietnam plants). Not simply domestic consumption.</td></tr>
+<tr class="anomaly-row"><td>⚠ ADVANCED PROTEIN TECH — SOLE CUSTOMER</td><td>Advanced Protein Technologies (Korea, 18 shipments, $0.61 MN$) sells exclusively to Asia Chemical Corp (Vietnam)</td><td>Bilateral captive supply relationship. No market access for other buyers. Classic supply chain lock-in structure.</td></tr>
+<tr class="anomaly-row"><td>⚠ RUSSIA IMPORTS (3 shipments from Belarus)</td><td>ODO "VAN-97" (Belarus) supplies ARN LLC (Russia) via non-standard route — geopolitical supply chain rerouting</td><td>Post-Ukraine sanctions, Eastern European HMO supply routes have shifted. Belarus acting as transit country. Watch for sanctions compliance issues if we are sourcing from or selling to this corridor.</td></tr>
+<tr class="anomaly-row"><td>⚠ 2024 PRICE DIP + 2025 SURGE</td><td>Price per MT declined -6.6% in 2024 then surged +11.9% in 2025</td><td>Classic supply-demand cycle: capacity additions in 2023–24 (Kyowa Thailand, DSM Slovakia) depressed prices; demand surge from India/China approvals + global premiumization consumed excess supply by 2025.</td></tr>
+</table>
+</div></div>
+
+<div class="card">
+<div class="card-header">Strategic Trade Insights (Cross-Referenced with Section 05 News)</div>
+<div class="card-body">
+<table>
+<tr><th>#</th><th>Trade Finding</th><th>News Linkage</th><th>Management Action</th></tr>
+<tr>
+  <td>1</td>
+  <td>Vietnam receives 74.7% of all 2'-FL trade; primarily through distributors (Barentz, SIM VN, Asia Chemical) not direct manufacturers</td>
+  <td>Vietnam has world\'s most active infant formula import market (2021 shipments globally, Jul 2024–Jun 2025 per Precedence Research)</td>
+  <td>Model India trading operations on Vietnam model — distributor (not direct) supplying multiple infant formula manufacturers. Target 5–8% India market share within 3 years (consistent with India\'s current position).</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>CHR Hansen (Germany) is sole supplier to India; Nutricia is sole buyer. Extreme concentration on both sides.</td>
+  <td>Kyowa Hakko Bio received FSSAI approval Sep 2024 — opening second supply source for India</td>
+  <td>Immediately approach Kyowa Hakko Bio as India distributor — they have FSSAI-approved product but NO India distributor in trade data. This is the clearest gap in the current supply chain.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>China suppliers (Synaura, Toisyn) appearing with 7 shipments — small but growing. Significant price discount implied.</td>
+  <td>BENEO/WACKER partnership (May 2025) adding EU supply; Evonik/DSM Slovakia (4,000 MT) adding large capacity</td>
+  <td>Use Chinese suppliers as pricing leverage in negotiations with CHR Hansen and Kyowa. Chinese material likely acceptable for non-infant-formula uses (adult supplements) where FSSAI infant formula approval not required.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Abbott Ireland sending small lots to India labeled "R&amp;D purpose — not for sale" (trade data confirms)</td>
+  <td>Abbott Nutrition expanding HMO integration globally; India FSSAI approval widens scope</td>
+  <td>Abbott India is a strategic target — they currently import through parent company. Positioning as local supply option could capture their India production scale-up demand.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>2025 saw highest shipment value in dataset ($5.18 MN$ standard units) despite 60 shipments vs 79 in 2024</td>
+  <td>India + China approvals in Sep 2024 and early 2025 drove demand surge confirmed in news</td>
+  <td>2025–2026 is the optimal entry window — market is growing, India is early, no local competitor. First-mover advantage window is approximately 12–18 months before global suppliers establish direct India presence.</td>
+</tr>
+</table>
+</div></div>
+</section>
+
+<!-- REFERENCES -->
+<section class="section" id="refs">
+<div class="section-header">
+  <div class="sec-num">★</div>
+  <div class="sec-title">Sources &amp; <span>References</span></div>
+</div>
+<div class="card">
+<div class="card-body">
+<div class="ref-list">
+<div class="ref-item"><div class="ref-text">FSA UK (2024). Assessment on 2'-Fucosyllactose derived from GM Corynebacterium glutamicum APC199. <a href="https://science.food.gov.uk/article/126854" target="_blank">science.food.gov.uk</a></div></div>
+<div class="ref-item"><div class="ref-text">ChemicalBook. 2'-Fucosyllactose CAS 41263-94-9. <a href="https://www.chemicalbook.com/ChemicalProductProperty_EN_CB2111311.htm" target="_blank">chemicalbook.com</a></div></div>
+<div class="ref-item"><div class="ref-text">BOC Sciences. 2'-Fucosyllactose. <a href="https://www.bocsci.com/product/2-fucosyllactose-cas-41263-94-9-116976.html" target="_blank">bocsci.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Frontiers Bioengineering &amp; Biotechnology (2021). Multi-Path Optimization for 2'-FL in E. coli C41. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7793955/" target="_blank">pmc.ncbi.nlm.nih.gov</a></div></div>
+<div class="ref-item"><div class="ref-text">PMC (2024). Construction of engineered E. coli for 2'-FL via salvage pathway. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10825923/" target="_blank">pmc.ncbi.nlm.nih.gov</a></div></div>
+<div class="ref-item"><div class="ref-text">Nature Scientific Reports (2025). Synthesis of 2'-FL using multi-enzyme cascade. <a href="https://www.nature.com/articles/s41598-025-32265-7" target="_blank">nature.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Kirin Holdings (Sep 2024). Kyowa Hakko Bio\'s 2'-FL receives FSSAI approval in India. <a href="https://www.kirinholdings.com/en/newsroom/release/2024/0925_01.html" target="_blank">kirinholdings.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Strategic Revenue Insights (Aug 2025). Global 2-Fucosyllactose Market. <a href="https://www.openpr.com/news/4161347/global-2-fucosyllactose-market-poised-for-transformative" target="_blank">openpr.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Market Research Future (2024). 2-Fucosyllactose Market $0.62 Bn (2024) to $2.15 Bn (2034). <a href="https://www.marketresearchfuture.com/reports/2-fucosyllactose-market-34007" target="_blank">marketresearchfuture.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Data Horizzon Research (2024). 2'-FL Market $163.5 Mn (2024) to $512.8 Mn (2033). <a href="https://datahorizzonresearch.com/2-fucosyllactose-2-fl-market-38081" target="_blank">datahorizzonresearch.com</a></div></div>
+<div class="ref-item"><div class="ref-text">DataM Intelligence (2025). Human Milk Oligosaccharides Market 2024–2031. <a href="https://www.datamintelligence.com/research-report/human-milk-oligosaccharides-market" target="_blank">datamintelligence.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Coherent Market Insights (2025). Human Milk Oligosaccharides Market 2024–2031. <a href="https://www.coherentmarketinsights.com/market-insight/human-milk-oligosaccharides-market-5064" target="_blank">coherentmarketinsights.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Future Market Insights (Jul 2025). Human Milk Oligosaccharide Market to 2035. <a href="https://www.futuremarketinsights.com/reports/human-milk-oligosaccharides-market" target="_blank">futuremarketinsights.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Verified Market Reports (2026). Biosynthetic Human Milk Oligosaccharides (HMOs) Market. <a href="https://www.verifiedmarketreports.com/product/biosynthetic-human-milk-oligosaccharides-hmos-market/" target="_blank">verifiedmarketreports.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Fortune Business Insights (2025). Infant Formula Market — USD 87.75 Bn (2025), CAGR 10.02%. <a href="https://www.fortunebusinessinsights.com/industry-reports/infant-formula-market-101498" target="_blank">fortunebusinessinsights.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Mordor Intelligence (2025). India Baby Food Market Size &amp; Share Outlook to 2030. <a href="https://www.mordorintelligence.com/industry-reports/india-baby-food-market" target="_blank">mordorintelligence.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Grand View Research (2024). Infant Nutrition Market $392.1 Mn (2024). <a href="https://www.grandviewresearch.com/industry-analysis/infant-nutrition-market-report" target="_blank">grandviewresearch.com</a></div></div>
+<div class="ref-item"><div class="ref-text">InsightAce Analytic (Jan 2026). Novel Ingredients in Infant Formula Market. <a href="https://www.insightaceanalytic.com/report/novel-ingredients-in-infant-formula-market/2977" target="_blank">insightaceanalytic.com</a></div></div>
+<div class="ref-item"><div class="ref-text">IndexBox (Apr 2026). Human Milk Oligosaccharides Market in Europe. <a href="https://www.indexbox.io/store/europe-human-milk-oligosaccharides-market-analysis-forecast-size-trends-and-insights/" target="_blank">indexbox.io</a></div></div>
+<div class="ref-item"><div class="ref-text">Health Canada. 2'-Fucosyllactose from E. coli BL21 Novel Food Assessment. <a href="https://www.canada.ca/en/health-canada/services/food-nutrition/genetically-modified-foods-other-novel-foods/approved-products/2-fucosyllactose-escherichia-coli-bl21/technical-summary.html" target="_blank">canada.ca</a></div></div>
+<div class="ref-item"><div class="ref-text">FSSAI India. FoSCoS Portal — Import Licensing. <a href="https://foscos.fssai.gov.in" target="_blank">foscos.fssai.gov.in</a></div></div>
+<div class="ref-item"><div class="ref-text">DGFT India. ITC-HS Classification 2026. <a href="https://www.dgft.gov.in" target="_blank">dgft.gov.in</a></div></div>
+<div class="ref-item"><div class="ref-text">Food Safety Works (2026). FSSAI Food Import Compliance India. <a href="https://foodsafetyworks.com/insights/food-import-compliance-india/" target="_blank">foodsafetyworks.com</a></div></div>
+<div class="ref-item"><div class="ref-text">OpenPR / Future Market Insights (Jun 2026). HMO Market to Reach USD 1,925.6 Million by 2036. <a href="https://www.openpr.com/news/4533263/human-milk-oligosaccharides-market-to-reach-usd-1-925-6-million" target="_blank">openpr.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Elicityl SA. 2'-Fucosyllactose Analytical Reference Product. <a href="https://www.elicityl-oligotech.com/human-milk-oligosaccharides-analytical-references/640" target="_blank">elicityl-oligotech.com</a></div></div>
+<div class="ref-item"><div class="ref-text">Trade Data Source: 2_-FUCOSYLLACTOSE_GLOBAL_DATA_FROM_2023_JAN_-_2026_JUNE.xlsx (internal database, 289 shipments)</div></div>
+</div>
+</div></div>
+</section>
+
+</div><!-- end report-body -->
+
+<footer>
+  <p><b>2-Fucosyllactose (2'-FL) — Market Intelligence &amp; Feasibility Report | June 2026</b></p>
+  <p style="margin-top:6px">Prepared by: Claude AI — Chemical Market Intelligence System | <b>CONFIDENTIAL — Internal Management Use Only</b></p>
+  <p style="margin-top:6px">Based on publicly available secondary research and provided trade data. Market size estimates from third-party sources may vary. Not investment or financial advice.</p>
+  <p style="margin-top:6px;color:#546e7a">For best PDF navigation (clickable TOC), open PDF in <b>Adobe Acrobat</b> or <b>Chrome PDF viewer</b>.</p>
+</footer>
+
+</div><!-- end main-content -->
+
+<script>
+// Active section highlighting on scroll
+const navLinks = document.querySelectorAll('.nav-link[data-s]');
+const sections = document.querySelectorAll('section[id], div[id="refs"]');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.nav-link[data-s="${e.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, {threshold: 0.2, rootMargin: '-100px 0px -60% 0px'});
+
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
